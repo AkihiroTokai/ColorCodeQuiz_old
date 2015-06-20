@@ -1,0 +1,124 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
+    android:id="@+id/RelativeLayout"
+    android:focusable="true">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Mode:Practice"
+        android:id="@+id/mode"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="34dp"
+        android:layout_marginStart="34dp"
+        android:focusable="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Progress:1/10"
+        android:id="@+id/progress"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/mode"
+        android:layout_toEndOf="@+id/mode"
+        android:layout_marginLeft="41dp"
+        android:layout_marginStart="41dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="#"
+        android:id="@+id/tag"
+        android:layout_marginTop="89dp"
+        android:layout_below="@+id/mode"
+        android:layout_alignRight="@+id/answer1"
+        android:layout_alignEnd="@+id/answer1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="00"
+        android:id="@+id/red"
+        android:singleLine="false"
+        android:textColor="#ffff0000"
+        android:layout_above="@+id/answer1"
+        android:layout_toRightOf="@+id/tag"
+        android:layout_toEndOf="@+id/tag" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="00"
+        android:id="@+id/green"
+        android:textColor="#00ff00"
+        android:layout_alignTop="@+id/red"
+        android:layout_toRightOf="@+id/red"
+        android:layout_toEndOf="@+id/red" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="00"
+        android:id="@+id/blue"
+        android:textColor="#0000ff"
+        android:layout_above="@+id/answer1"
+        android:layout_toRightOf="@+id/green"
+        android:layout_toEndOf="@+id/green" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/answer1"
+        android:layout_marginTop="78dp"
+        android:layout_below="@+id/tag"
+        android:layout_toLeftOf="@+id/progress"
+        android:layout_toStartOf="@+id/progress"
+        android:background="#000000"
+        android:singleLine="true"
+        android:onClick="select1" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/answer2"
+        android:layout_alignTop="@+id/answer1"
+        android:layout_alignRight="@+id/progress"
+        android:layout_alignEnd="@+id/progress"
+        android:background="#ffffffff"
+        android:onClick="select2" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/answer3"
+        android:layout_marginTop="49dp"
+        android:background="#ff0000"
+        android:layout_below="@+id/answer1"
+        android:layout_alignLeft="@+id/answer1"
+        android:layout_alignStart="@+id/answer1"
+        android:onClick="select3" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/answer4"
+        android:singleLine="false"
+        android:background="#0000ff"
+        android:layout_alignTop="@+id/answer3"
+        android:layout_alignLeft="@+id/answer2"
+        android:layout_alignStart="@+id/answer2"
+        android:onClick="select4" />
+
+</RelativeLayout>
