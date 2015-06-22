@@ -115,7 +115,7 @@ public class MainActivity extends ActionBarActivity {
             blue.setText("00");
             answer1.setBackgroundColor(Color.parseColor("#00ffff"));
             answer2.setBackgroundColor(Color.parseColor("#ffff00"));
-            answer3.setBackgroundColor(Color.parseColor("#ffff00"));
+            answer3.setBackgroundColor(Color.parseColor("#88ff00"));
             answer4.setBackgroundColor(Color.parseColor("#ff00ff"));
             check_answer = 2;
         }
@@ -138,7 +138,7 @@ public class MainActivity extends ActionBarActivity {
             answer1.setBackgroundColor(Color.parseColor("#00ffff"));
             answer2.setBackgroundColor(Color.parseColor("#00ff00"));
             answer3.setBackgroundColor(Color.parseColor("#ffff00"));
-            answer4.setBackgroundColor(Color.parseColor("#ff00ff"));
+            answer4.setBackgroundColor(Color.parseColor("#ff0088"));
             check_answer = 2;
         }
 
@@ -146,9 +146,9 @@ public class MainActivity extends ActionBarActivity {
             red.setText("00");
             green.setText("00");
             blue.setText("ff");
-            answer1.setBackgroundColor(Color.parseColor("#00ffff"));
-            answer2.setBackgroundColor(Color.parseColor("#0000ff"));
-            answer3.setBackgroundColor(Color.parseColor("#ffff00"));
+            answer1.setBackgroundColor(Color.parseColor("#008888"));
+            answer2.setBackgroundColor(Color.parseColor("#000088"));
+            answer3.setBackgroundColor(Color.parseColor("#88ff00"));
             answer4.setBackgroundColor(Color.parseColor("#ff00ff"));
             check_answer = 2;
         }
@@ -158,9 +158,9 @@ public class MainActivity extends ActionBarActivity {
             green.setText("00");
             blue.setText("88");
             answer1.setBackgroundColor(Color.parseColor("#880088"));
-            answer2.setBackgroundColor(Color.parseColor("#ffffff"));
-            answer3.setBackgroundColor(Color.parseColor("#ffff00"));
-            answer4.setBackgroundColor(Color.parseColor("#ff00ff"));
+            answer2.setBackgroundColor(Color.parseColor("#888888"));
+            answer3.setBackgroundColor(Color.parseColor("#888800"));
+            answer4.setBackgroundColor(Color.parseColor("#ff8888"));
             check_answer = 1;
         }
 
@@ -169,8 +169,8 @@ public class MainActivity extends ActionBarActivity {
             green.setText("88");
             blue.setText("88");
             answer1.setBackgroundColor(Color.parseColor("#8800ff"));
-            answer2.setBackgroundColor(Color.parseColor("#ffffff"));
-            answer3.setBackgroundColor(Color.parseColor("#ffff00"));
+            answer2.setBackgroundColor(Color.parseColor("#ff88ff"));
+            answer3.setBackgroundColor(Color.parseColor("#88ff00"));
             answer4.setBackgroundColor(Color.parseColor("#008888"));
             check_answer = 4;
         }
