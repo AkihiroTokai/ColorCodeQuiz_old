@@ -119,6 +119,7 @@
         android:layout_alignTop="@+id/answer3"
         android:layout_alignLeft="@+id/answer2"
         android:layout_alignStart="@+id/answer2"
-        android:onClick="select4" />
+        android:onClick="select4"
+        android:layout_alignParentEnd="false" />
 
 </RelativeLayout>
