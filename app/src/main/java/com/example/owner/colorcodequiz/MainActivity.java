@@ -33,6 +33,7 @@ public class MainActivity extends ActionBarActivity {
         Button answer2 = (Button) findViewById(R.id.answer2);
         Button answer3 = (Button) findViewById(R.id.answer3);
         Button answer4 = (Button) findViewById(R.id.answer4);
+
         TextView progress =(TextView)findViewById(R.id.progress);
         TextView red = (TextView) findViewById(R.id.red);
         TextView green = (TextView) findViewById(R.id.green);
