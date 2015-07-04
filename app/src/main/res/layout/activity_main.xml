@@ -122,4 +122,15 @@
         android:onClick="select4"
         android:layout_alignParentEnd="false" />
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:layout_alignLeft="@+id/answer1"
+        android:layout_alignStart="@+id/answer1"
+        android:layout_toStartOf="@+id/red"
+        android:layout_below="@+id/answer1"
+        android:layout_alignRight="@+id/answer1"
+        android:layout_alignEnd="@+id/answer1" />
+
 </RelativeLayout>
