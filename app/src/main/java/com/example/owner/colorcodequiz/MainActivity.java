@@ -1,8 +1,9 @@
 package com.example.owner.colorcodequiz;
 
 import android.graphics.Color;
-import android.support.v7.app.ActionBarActivity;
+
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -23,7 +24,6 @@ public class MainActivity extends ActionBarActivity {
     private Button answer4;
     private int gameCount;
     private int check_answer;
-
 
 
     @Override
@@ -52,7 +52,7 @@ public class MainActivity extends ActionBarActivity {
             // ImageView1.setImage(R.id.false)/
         }
         gameCount = gameCount + 1;
-        progress.setText("Progress:" + gameCount + "/10");
+        //NullPointerException→progress.setText("Progress:" + gameCount + "/10");
     }
 
     public void select2(View view) {
@@ -73,10 +73,10 @@ public class MainActivity extends ActionBarActivity {
             // ImageView3.setImage(R.id.false)/
         }
         gameCount = gameCount + 1;
-        progress.setText("Progress:" + gameCount + "/10");
+        //  progress.setText("Progress:" + gameCount + "/10");
     }
 
-    public void  select4(View view) {
+    public void select4(View view) {
         if (check_answer == 4) {
             //ImageView4.setImage(R.id.true)
 
