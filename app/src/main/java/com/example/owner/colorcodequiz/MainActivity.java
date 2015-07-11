@@ -42,8 +42,6 @@ public class MainActivity extends ActionBarActivity {
         TextView green = (TextView) findViewById(R.id.green);
         TextView blue = (TextView) findViewById(R.id.blue);
     }
-
-
     public void select1(View view) {
         if (check_answer == 1) {
             //ImageView2.setImage(R.id.true)
@@ -53,6 +51,7 @@ public class MainActivity extends ActionBarActivity {
         }
         gameCount = gameCount + 1;
         //NullPointerException→progress.setText("Progress:" + gameCount + "/10");
+        setanswer();
     }
 
     public void select2(View view) {
@@ -64,6 +63,7 @@ public class MainActivity extends ActionBarActivity {
         }
         gameCount = gameCount + 1;
        // progress.setText("Progress:" + gameCount + "/10");
+        setanswer();
     }
 
     public void select3(View view) {
@@ -73,7 +73,8 @@ public class MainActivity extends ActionBarActivity {
             // ImageView3.setImage(R.id.false)/
         }
         gameCount = gameCount + 1;
-        //  progress.setText("Progress:" + gameCount + "/10");
+        progress.setText("Progress:" + gameCount + "/10");
+        setanswer();
     }
 
     public void select4(View view) {
@@ -85,6 +86,7 @@ public class MainActivity extends ActionBarActivity {
         }
         //gameCount = gameCount + 1;
         progress.setText("Progress:" + gameCount + "/10");
+        setanswer();
     }
 
     public void setanswer() {
