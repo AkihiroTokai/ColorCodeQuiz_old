@@ -51,7 +51,7 @@ public class MainActivity extends ActionBarActivity {
         }
         gameCount = gameCount + 1;
         //NullPointerException→progress.setText("Progress:" + gameCount + "/10");
-        setanswer();
+        //setanswer();
     }
 
     public void select2(View view) {
@@ -63,7 +63,7 @@ public class MainActivity extends ActionBarActivity {
         }
         gameCount = gameCount + 1;
         progress.setText("Progress:" + gameCount + "/10");
-        setanswer();
+        //setanswer();
     }
 
     public void select3(View view) {
@@ -74,7 +74,7 @@ public class MainActivity extends ActionBarActivity {
         }
         gameCount = gameCount + 1;
         progress.setText("Progress:" + gameCount + "/10");
-        setanswer();
+        //setanswer();
     }
 
     public void select4(View view) {
@@ -86,7 +86,7 @@ public class MainActivity extends ActionBarActivity {
         }
         gameCount = gameCount + 1;
         progress.setText("Progress:" + gameCount + "/10");
-        setanswer();
+        //setanswer();
     }
 
     public void setanswer() {
