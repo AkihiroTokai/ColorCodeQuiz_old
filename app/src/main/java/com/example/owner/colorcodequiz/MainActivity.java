@@ -61,7 +61,7 @@ public class MainActivity extends ActionBarActivity {
         } else {
             // ImageView2.setImage(R.id.false)/
         }
-        gameCount = gameCount + 1;
+        //gameCount = gameCount + 1;
         progress.setText("Progress:" + gameCount + "/10");
         //setanswer();
     }
