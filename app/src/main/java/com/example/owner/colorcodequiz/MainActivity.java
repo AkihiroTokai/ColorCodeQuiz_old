@@ -50,7 +50,7 @@ public class MainActivity extends ActionBarActivity {
             // ImageView1.setImage(R.id.false)/
         }
         gameCount = gameCount + 1;
-        //NullPointerException→progress.setText("Progress:" + gameCount + "/10");
+        progress.setText("Progress:" + gameCount + "/10");
         //setanswer();
     }
 
