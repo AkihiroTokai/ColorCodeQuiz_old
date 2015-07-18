@@ -29,7 +29,7 @@ public class MainActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        //setContentView(R.layout.activity_main);
         check_answer = 1;
         gameCount = 1;
         Button answer1 = (Button) findViewById(R.id.answer1);
