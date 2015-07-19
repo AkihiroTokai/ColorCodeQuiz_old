@@ -85,9 +85,9 @@
         android:layout_below="@+id/tag"
         android:layout_toLeftOf="@+id/progress"
         android:layout_toStartOf="@+id/progress"
-        android:background="#000000"
         android:singleLine="true"
-        android:onClick="select1" />
+        android:onClick="select1"
+        android:clickable="false" />
 
     <Button
         android:layout_width="wrap_content"
@@ -96,7 +96,6 @@
         android:layout_alignTop="@+id/answer1"
         android:layout_alignRight="@+id/progress"
         android:layout_alignEnd="@+id/progress"
-        android:background="#ffffffff"
         android:onClick="select2" />
 
     <Button
@@ -104,7 +103,6 @@
         android:layout_height="wrap_content"
         android:id="@+id/answer3"
         android:layout_marginTop="49dp"
-        android:background="#ff0000"
         android:layout_below="@+id/answer1"
         android:layout_alignLeft="@+id/answer1"
         android:layout_alignStart="@+id/answer1"
@@ -115,10 +113,10 @@
         android:layout_height="wrap_content"
         android:id="@+id/answer4"
         android:singleLine="false"
-        android:background="#0000ff"
         android:onClick="select4"
         android:layout_alignTop="@+id/answer3"
-        android:layout_alignStart="@+id/answer2" />
+        android:layout_alignStart="@+id/answer2"
+        android:clickable="true" />
 
     <ImageView
         android:layout_width="wrap_content"
