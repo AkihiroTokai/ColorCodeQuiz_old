@@ -42,10 +42,6 @@ public class MainActivity extends ActionBarActivity {
         TextView green = (TextView) findViewById(R.id.green);
         TextView blue = (TextView) findViewById(R.id.blue);
 
-         answer1.setBackgroundColor(Color.parseColor("#000000"));
-         answer2.setBackgroundColor(Color.parseColor("#ffffff"));
-         answer3.setBackgroundColor(Color.parseColor("#ff0000"));
-         answer4.setBackgroundColor(Color.parseColor("#00ffff"));
     }
     public void select1(View view) {
         if (check_answer == 1) {
@@ -56,7 +52,7 @@ public class MainActivity extends ActionBarActivity {
         }
         gameCount = gameCount + 1;
         progress.setText("Progress:" + gameCount + "/10");
-        //setanswer();
+        setanswer();
     }
 
     public void select2(View view) {
@@ -68,7 +64,7 @@ public class MainActivity extends ActionBarActivity {
         }
         //gameCount = gameCount + 1;
         progress.setText("Progress:" + gameCount + "/10");
-        //setanswer();
+        setanswer();
     }
 
     public void select3(View view) {
@@ -79,7 +75,7 @@ public class MainActivity extends ActionBarActivity {
         }
         gameCount = gameCount + 1;
         progress.setText("Progress:" + gameCount + "/10");
-        //setanswer();
+        setanswer();
     }
 
     public void select4(View view) {
@@ -91,7 +87,7 @@ public class MainActivity extends ActionBarActivity {
         }
         gameCount = gameCount + 1;
         progress.setText("Progress:" + gameCount + "/10");
-        //setanswer();
+        setanswer();
     }
 
     public void setanswer() {

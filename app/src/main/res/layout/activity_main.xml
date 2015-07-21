@@ -51,8 +51,7 @@
         android:id="@+id/red"
         android:singleLine="false"
         android:textColor="#ffff0000"
-        android:layout_above="@+id/answer1"
-        android:layout_toRightOf="@+id/tag"
+        android:layout_alignTop="@+id/tag"
         android:layout_toEndOf="@+id/tag" />
 
     <TextView
@@ -73,21 +72,19 @@
         android:text="00"
         android:id="@+id/blue"
         android:textColor="#0000ff"
-        android:layout_above="@+id/answer1"
-        android:layout_toRightOf="@+id/green"
+        android:layout_alignTop="@+id/green"
         android:layout_toEndOf="@+id/green" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/answer1"
-        android:layout_marginTop="78dp"
-        android:layout_below="@+id/tag"
-        android:layout_toLeftOf="@+id/progress"
-        android:layout_toStartOf="@+id/progress"
         android:singleLine="true"
         android:onClick="select1"
-        android:clickable="false" />
+        android:clickable="false"
+        android:layout_centerVertical="true"
+        android:layout_toStartOf="@+id/progress"
+        android:background="#000000" />
 
     <Button
         android:layout_width="wrap_content"
@@ -96,7 +93,9 @@
         android:layout_alignTop="@+id/answer1"
         android:layout_alignRight="@+id/progress"
         android:layout_alignEnd="@+id/progress"
-        android:onClick="select2" />
+        android:onClick="select2"
+        android:layout_alignParentEnd="false"
+        android:background="#ffffff" />
 
     <Button
         android:layout_width="wrap_content"
@@ -106,7 +105,8 @@
         android:layout_below="@+id/answer1"
         android:layout_alignLeft="@+id/answer1"
         android:layout_alignStart="@+id/answer1"
-        android:onClick="select3" />
+        android:onClick="select3"
+        android:background="#ff0000" />
 
     <Button
         android:layout_width="wrap_content"
@@ -116,7 +116,8 @@
         android:onClick="select4"
         android:layout_alignTop="@+id/answer3"
         android:layout_alignStart="@+id/answer2"
-        android:clickable="true" />
+        android:clickable="true"
+        android:background="#0000ff" />
 
     <ImageView
         android:layout_width="wrap_content"
