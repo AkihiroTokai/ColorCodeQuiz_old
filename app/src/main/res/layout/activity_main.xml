@@ -18,12 +18,12 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Mode:Practice"
         android:id="@+id/mode"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
         android:layout_marginLeft="34dp"
-        android:layout_marginStart="34dp"
-        android:focusable="true" />
+        android:layout_marginStart="53dp"
+        android:focusable="true"
+        android:layout_below="@+id/tabs"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="36dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -31,11 +31,10 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Progress:1/10"
         android:id="@+id/progress"
-        android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/mode"
-        android:layout_toEndOf="@+id/mode"
         android:layout_marginLeft="41dp"
-        android:layout_marginStart="41dp" />
+        android:layout_above="@+id/tag"
+        android:layout_toEndOf="@+id/mode"
+        android:layout_marginStart="36dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -43,10 +42,9 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="#"
         android:id="@+id/tag"
-        android:layout_marginTop="89dp"
+        android:layout_marginTop="41dp"
         android:layout_below="@+id/mode"
-        android:layout_alignRight="@+id/answer1"
-        android:layout_alignEnd="@+id/answer1" />
+        android:layout_alignEnd="@+id/mode" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -66,9 +64,8 @@
         android:text="00"
         android:id="@+id/green"
         android:textColor="#00ff00"
-        android:layout_alignTop="@+id/red"
-        android:layout_toRightOf="@+id/red"
-        android:layout_toEndOf="@+id/red" />
+        android:layout_alignTop="@+id/blue"
+        android:layout_toEndOf="@+id/blue" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -77,61 +74,26 @@
         android:text="00"
         android:id="@+id/blue"
         android:textColor="#0000ff"
-        android:layout_alignTop="@+id/green"
-        android:layout_toEndOf="@+id/green" />
-
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignStart="@+id/mode"
-        android:layout_toStartOf="@+id/green"
-        android:layout_above="@+id/answer4"
-        android:layout_below="@+id/tag"
-        android:id="@+id/frameLayout">
-
-    </FrameLayout>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/answer1"
-        android:singleLine="true"
-        android:onClick="select1"
-        android:clickable="false"
-        android:layout_centerVertical="true"
-        android:layout_toStartOf="@+id/progress"
-        android:background="#000000" />
-
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignStart="@+id/mode"
-        android:layout_toStartOf="@+id/green"
-        android:layout_above="@+id/answer4"
-        android:layout_below="@+id/tag"
-        android:layout_gravity="center" />
+        android:layout_alignTop="@+id/red"
+        android:layout_toEndOf="@+id/red" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/answer2"
-        android:layout_alignTop="@+id/answer1"
-        android:layout_alignRight="@+id/progress"
-        android:layout_alignEnd="@+id/progress"
         android:onClick="select2"
-        android:layout_alignParentEnd="false"
-        android:background="#ffffff" />
+        android:background="#ffffff"
+        android:layout_centerVertical="true"
+        android:layout_alignStart="@+id/progress" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/answer3"
-        android:layout_marginTop="49dp"
-        android:layout_below="@+id/answer1"
-        android:layout_alignLeft="@+id/answer1"
-        android:layout_alignStart="@+id/answer1"
         android:onClick="select3"
-        android:background="#ff0000" />
+        android:background="#ff0000"
+        android:layout_alignTop="@+id/answer4"
+        android:layout_toStartOf="@+id/progress" />
 
     <Button
         android:layout_width="wrap_content"
@@ -139,44 +101,10 @@
         android:id="@+id/answer4"
         android:singleLine="false"
         android:onClick="select4"
-        android:layout_alignTop="@+id/answer3"
-        android:layout_alignStart="@+id/answer2"
         android:clickable="true"
-        android:background="#0000ff" />
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageView"
-        android:layout_alignLeft="@+id/answer1"
-        android:layout_alignStart="@+id/answer1"
-        android:layout_toStartOf="@+id/red"
-        android:layout_below="@+id/answer1"
-        android:layout_alignRight="@+id/answer1"
-        android:layout_alignEnd="@+id/answer1" />
-
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentEnd="true"
-        android:layout_above="@+id/answer4"
-        android:layout_toEndOf="@+id/frameLayout"
-        android:layout_alignTop="@+id/frameLayout"
-        android:id="@+id/frameLayout2"></FrameLayout>
-
-    <TableLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignStart="@+id/frameLayout"
-        android:layout_below="@+id/frameLayout"
-        android:layout_alignParentBottom="true"
-        android:layout_toStartOf="@+id/frameLayout2"></TableLayout>
-
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignEnd="@+id/frameLayout2"
-        android:layout_alignStart="@+id/progress"
-        android:layout_below="@+id/frameLayout2"></FrameLayout>
+        android:background="#0000ff"
+        android:layout_marginTop="46dp"
+        android:layout_below="@+id/answer2"
+        android:layout_alignStart="@+id/answer2" />
 
 </RelativeLayout>
