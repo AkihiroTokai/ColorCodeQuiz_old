@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main);
         check_answer = 1;
         gameCount = 1;
         Button answer1 = (Button) findViewById(R.id.answer1);
@@ -42,8 +42,8 @@ public class MainActivity extends AppCompatActivity {
         TextView green = (TextView) findViewById(R.id.green);
         TextView blue = (TextView) findViewById(R.id.blue);
 
-        PagerSlidingTabStrip tabs = (PagerSlidingTabStrip) findViewById(R.id.tabs);
-        tabs.setViewPager(mViewPager);
+       // PagerSlidingTabStrip tabs = (PagerSlidingTabStrip) findViewById(R.id.tabs);
+        //tabs.setViewPager(mViewPager);
 
     }
     public void select1(View view) {
