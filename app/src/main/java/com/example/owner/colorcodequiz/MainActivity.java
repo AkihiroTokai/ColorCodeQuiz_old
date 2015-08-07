@@ -1,6 +1,5 @@
 package com.example.owner.colorcodequiz;
 
-import android.content.Intent;
 import android.graphics.Color;
 
 import android.os.Bundle;
@@ -10,7 +9,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -46,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         answer1 = (Button) findViewById(R.id.answer1);
         answer2 = (Button) findViewById(R.id.answer2);
         answer3 = (Button) findViewById(R.id.answer3);
-        answer4 = (Button) findViewById(R.id.answer4);
+        answer4 = (Button) findViewById(R.id.select4);
 
         progress =(TextView)findViewById(R.id.progress);
         red = (TextView) findViewById(R.id.red);

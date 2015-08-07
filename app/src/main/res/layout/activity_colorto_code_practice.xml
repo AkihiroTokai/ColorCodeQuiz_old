@@ -64,9 +64,9 @@
         android:layout_height="wrap_content"
         android:id="@+id/answer3"
         android:onClick="select3"
-        android:layout_alignTop="@+id/answer4"
+        android:layout_alignTop="@+id/select4"
         android:layout_alignStart="@+id/mode"
-        android:layout_alignBottom="@+id/answer4"
+        android:layout_alignBottom="@+id/select4"
         android:layout_alignEnd="@+id/mode" />
 
     <FrameLayout
@@ -89,7 +89,7 @@
     <Button
         android:layout_width="109dp"
         android:layout_height="60dp"
-        android:id="@+id/answer4"
+        android:id="@+id/select4"
         android:singleLine="false"
         android:onClick="select4"
         android:clickable="true"
@@ -103,9 +103,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/select2"
-        android:layout_alignEnd="@+id/answer4"
+        android:layout_alignEnd="@+id/select4"
         android:layout_alignBottom="@+id/select1"
-        android:layout_alignStart="@+id/answer4" />
+        android:layout_alignStart="@+id/select4" />
 
 
 </RelativeLayout>

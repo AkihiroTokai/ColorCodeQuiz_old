@@ -151,7 +151,7 @@
         android:id="@+id/answer3"
         android:onClick="select3"
         android:background="#ff0000"
-        android:layout_alignTop="@+id/answer4"
+        android:layout_alignTop="@+id/select4"
         android:layout_toStartOf="@+id/progress" />
 
     <FrameLayout
@@ -171,7 +171,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/answer4"
+        android:id="@+id/select4"
         android:singleLine="false"
         android:onClick="select4"
         android:clickable="true"
