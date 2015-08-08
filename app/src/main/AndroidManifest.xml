@@ -20,6 +20,10 @@
             android:name=".ColortoCode_practiceActivity"
             android:label="@string/title_activity_colorto_code_practice" >
         </activity>
+        <activity
+            android:name=".ColortoCodeActivity"
+            android:label="@string/title_activity_colorto_code" >
+        </activity>
     </application>
 
 </manifest>
