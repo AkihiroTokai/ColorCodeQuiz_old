@@ -39,10 +39,10 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Button"
         android:id="@+id/select1"
+        android:layout_alignStart="@+id/answer3"
         android:layout_above="@+id/frameLayout4"
-        android:layout_toStartOf="@+id/progress" />
+        android:layout_alignEnd="@+id/answer3" />
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -102,10 +102,10 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Button"
         android:id="@+id/select2"
+        android:layout_alignEnd="@+id/answer4"
         android:layout_alignBottom="@+id/select1"
-        android:layout_alignEnd="@+id/answer4" />
+        android:layout_alignStart="@+id/answer4" />
 
 
 </RelativeLayout>
