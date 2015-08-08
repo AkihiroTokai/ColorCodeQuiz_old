@@ -1,5 +1,6 @@
 package com.example.owner.colorcodequiz;
 
+import android.content.Intent;
 import android.graphics.Color;
 
 import android.os.Bundle;
@@ -8,8 +9,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import com.astuetz.PagerSlidingTabStrip;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -18,12 +23,18 @@ public class MainActivity extends AppCompatActivity {
     private TextView red;
     private TextView green;
     private TextView blue;
+    private ImageView check_select1;
+    private ImageView check_select2;
+    private ImageView check_select3;
+    private ImageView check_select4;
     private Button answer1;
     private Button answer2;
     private Button answer3;
     private Button answer4;
     private int gameCount;
     private int check_answer;
+    private boolean nextquestion;
+    private RelativeLayout backGround;
 
 
     @Override
@@ -32,65 +43,114 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         check_answer = 1;
         gameCount = 1;
-        Button answer1 = (Button) findViewById(R.id.answer1);
-        Button answer2 = (Button) findViewById(R.id.answer2);
-        Button answer3 = (Button) findViewById(R.id.answer3);
-        Button answer4 = (Button) findViewById(R.id.answer4);
+        answer1 = (Button) findViewById(R.id.answer1);
+        answer2 = (Button) findViewById(R.id.answer2);
+        answer3 = (Button) findViewById(R.id.answer3);
+        answer4 = (Button) findViewById(R.id.answer4);
 
-        TextView progress =(TextView)findViewById(R.id.progress);
-        TextView red = (TextView) findViewById(R.id.red);
-        TextView green = (TextView) findViewById(R.id.green);
-        TextView blue = (TextView) findViewById(R.id.blue);
+        progress =(TextView)findViewById(R.id.progress);
+        red = (TextView) findViewById(R.id.red);
+        green = (TextView) findViewById(R.id.green);
+        blue = (TextView) findViewById(R.id.blue);
 
-       // PagerSlidingTabStrip tabs = (PagerSlidingTabStrip) findViewById(R.id.tabs);
+        check_select1 = (ImageView)findViewById(R.id.check_select1);
+        check_select2 = (ImageView)findViewById(R.id.check_select2);
+        check_select3 = (ImageView)findViewById(R.id.check_select3);
+        check_select4 = (ImageView)findViewById(R.id.check_select4);
+
+        backGround = (RelativeLayout)findViewById(R.id.RelativeLayout);
+
+        backGround.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+              if (gameCount == 10){
+                  //Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                  //startActivity(intent);
+              }
+            }
+            });
+        nextquestion = false;
+
+        PagerSlidingTabStrip tabs = (PagerSlidingTabStrip) findViewById(R.id.tabs);
         //tabs.setViewPager(mViewPager);
 
     }
     public void select1(View view) {
-        if (check_answer == 1) {
-            //ImageView2.setImage(R.id.true)
-
-        } else {
-            // ImageView1.setImage(R.id.false)/
-        }
+        if (nextquestion == false)   {
+            if (check_answer == 1) {
+                check_select1.setImageResource(R.drawable.maru);
+            } else {
+                check_select1.setImageResource(R.drawable.batu);
+            }
         gameCount = gameCount + 1;
-        progress.setText("Progress:" + gameCount + "/10");
-        setanswer();
-    }
+        if (gameCount <= 10) {
+            progress.setText("Progress:" + gameCount + "/10");
+        }
+        nextquestion = true;
+        if(gameCount ==10){
+
+        }else {
+            setanswer();
+            nextquestion = false;
+            check_select1.setImageDrawable(null);
+        }
+    }}
 
     public void select2(View view) {
-        if (check_answer == 2) {
-            //ImageView2.setImage(R.id.true)
-
-        } else {
-            // ImageView2.setImage(R.id.false)/
+        if (nextquestion == false) {
+            if (check_answer == 2) {
+                check_select2.setImageResource(R.drawable.maru);
+            } else {
+                check_select2.setImageResource(R.drawable.batu);
+            }
+            gameCount = gameCount + 1;
+            if (gameCount <= 10) {
+                progress.setText("Progress:" + gameCount + "/10");
+            }
+            nextquestion = true;
+        }else {
+            setanswer();
+            nextquestion = false;
+            check_select2.setImageDrawable(null);
         }
-        gameCount = gameCount + 1;
-        progress.setText("Progress:" + gameCount + "/10");
-        setanswer();
     }
 
     public void select3(View view) {
-        if (check_answer == 3) {
-            //ImageView3.setImage(R.id.true)
-        } else {
-            // ImageView3.setImage(R.id.false)/
+        if (nextquestion == false){
+            if (check_answer == 3) {
+                check_select3.setImageResource(R.drawable.maru);
+            } else {
+                check_select3.setImageResource(R.drawable.batu);
+            }
+            gameCount = gameCount + 1;
+            if (gameCount <= 10) {
+                progress.setText("Progress:" + gameCount + "/10");
+            }
+            nextquestion = true;
+        }else {
+            setanswer();
+            nextquestion = false;
+            check_select3.setImageDrawable(null);
         }
-        gameCount = gameCount + 1;
-        progress.setText("Progress:" + gameCount + "/10");
-        setanswer();
     }
 
     public void select4(View view) {
-        if (check_answer == 4) {
-            //ImageView4.setImage(R.id.true)
-
-        } else {
-            // ImageView4.setImage(R.id.false)
+        if (nextquestion == false)   {
+            if (check_answer == 1) {
+                check_select4.setImageResource(R.drawable.maru);
+            } else {
+                check_select4.setImageResource(R.drawable.batu);
+            }
+            gameCount = gameCount + 1;
+            if (gameCount <= 10) {
+                progress.setText("Progress:" + gameCount + "/10");
+            }
+            nextquestion = true;
+        }else {
+            setanswer();
+            nextquestion = false;
+            check_select4.setImageDrawable(null);
         }
-        gameCount = gameCount + 1;
-        progress.setText("Progress:" + gameCount + "/10");
-        setanswer();
     }
 
     public void setanswer() {
