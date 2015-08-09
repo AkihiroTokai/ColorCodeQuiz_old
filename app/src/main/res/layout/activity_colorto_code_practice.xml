@@ -40,7 +40,24 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageView" />
+        android:id="@+id/imageView"
+        android:layout_alignStart="@+id/progress" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/answer4"
+        android:layout_alignStart="@+id/answer1"
+        android:layout_alignTop="@+id/answer1"
+        android:layout_toStartOf="@+id/answer2"
+        android:id="@+id/frameLayout2">
+
+        <ImageView
+            android:layout_width="89dp"
+            android:layout_height="match_parent"
+            android:id="@+id/imageView3"
+            android:layout_gravity="left|top" />
+    </FrameLayout>
 
     <Button
         android:layout_width="wrap_content"
@@ -52,6 +69,21 @@
         android:layout_alignParentBottom="true"
         android:layout_toStartOf="@+id/progress" />
 
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignTop="@+id/answer2"
+        android:layout_toEndOf="@+id/frameLayout2"
+        android:layout_above="@+id/answer4"
+        android:id="@+id/frameLayout5" >
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/check_select2"
+            android:layout_gravity="left|top" />
+    </FrameLayout>
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -60,6 +92,30 @@
         android:onClick="select2"
         android:layout_alignTop="@+id/answer1"
         android:layout_alignStart="@+id/answer4" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/frameLayout2"
+        android:layout_alignStart="@+id/answer3"
+        android:layout_toStartOf="@+id/answer4"
+        android:layout_alignBottom="@+id/answer3" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/frameLayout6"
+        android:layout_alignStart="@+id/mode"
+        android:layout_below="@+id/frameLayout2"
+        android:layout_toStartOf="@+id/answer4"
+        android:layout_alignParentBottom="true">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="87dp"
+            android:id="@+id/check_select3"
+            android:layout_gravity="center_horizontal|bottom" />
+    </FrameLayout>
 
     <Button
         android:layout_width="wrap_content"
@@ -70,6 +126,22 @@
         android:layout_marginTop="35dp"
         android:layout_below="@+id/answer2"
         android:layout_alignStart="@+id/answer1" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/frameLayout4"
+        android:layout_below="@+id/frameLayout2"
+        android:layout_toEndOf="@+id/frameLayout2"
+        android:layout_alignBottom="@+id/frameLayout6">
+
+        <ImageView
+            android:layout_width="168dp"
+            android:layout_height="87dp"
+            android:id="@+id/check_select4"
+            android:layout_gravity="right|bottom" />
+
+    </FrameLayout>
 
     <Button
         android:layout_width="wrap_content"

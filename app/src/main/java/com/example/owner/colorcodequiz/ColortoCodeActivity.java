@@ -64,6 +64,8 @@ public class ColortoCodeActivity extends AppCompatActivity {
         check_select4 = (ImageView)findViewById(R.id.check_select4);
 
         backGround = (RelativeLayout)findViewById(R.id.RelativeLayout);
+
+        setanswer();
     }
     public void select1(View view) {
         if (nextquestion == false)   {
@@ -140,7 +142,7 @@ public class ColortoCodeActivity extends AppCompatActivity {
             check_select4.setImageDrawable(null);
         }
     }
-     public void setanswer(){
+     public void setanswer() {
          //createColorCode
          Random rnd1 = new Random();
          int r = rnd1.nextInt(256);
@@ -166,30 +168,90 @@ public class ColortoCodeActivity extends AppCompatActivity {
 
          question.setImageBitmap(bitmap);
 
+
+         //createChoicesColorcode
+         int limit = 20;
+         while (true) {
+
+             Random rnd5 = new Random();
+             int r_a1 = rnd5.nextInt(256);
+             Random rnd6 = new Random();
+             int r_a2 = rnd6.nextInt(256);
+             Random rnd7 = new Random();
+             int r_a3 = rnd7.nextInt(256);
+
+             int abs_r1_2 = Math.abs(r_a1 - r_a2);
+             int abs_r2_3 = Math.abs(r_a2 - r_a3);
+             int abs_r3_1 = Math.abs(r_a3 - r_a1);
+
+             if ((abs_r1_2 >= limit) && (abs_r2_3 >= limit) && (abs_r3_1 >= limit)) {
+                 break;
+             }
+         }
+
+         while (true) {
+
+             Random rnd8 = new Random();
+             int r_g1 = rnd8.nextInt(256);
+             Random rnd9 = new Random();
+             int r_g2 = rnd9.nextInt(256);
+             Random rnd10 = new Random();
+             int r_g3 = rnd10.nextInt(256);
+
+             int abs_g1_2 = Math.abs(r_g1 - r_g2);
+             int abs_g2_3 = Math.abs(r_g2 - r_g3);
+             int abs_g3_1 = Math.abs(r_g3 - r_g1);
+
+             if ((abs_g1_2 >= limit) && (abs_g2_3 >= limit) && (abs_g3_1 >= limit)) {
+                 break;
+             }
+
+         }
+
+         while (true) {
+
+             Random rnd11 = new Random();
+             int r_b1 = rnd11.nextInt(256);
+             Random rnd12 = new Random();
+             int r_b2 = rnd12.nextInt(256);
+             Random rnd13 = new Random();
+             int r_b3 = rnd13.nextInt(256);
+
+             int abs_b1_2 = Math.abs(r_b1 - r_b2);
+             int abs_b2_3 = Math.abs(r_b2 - r_b3);
+             int abs_b3_1 = Math.abs(r_b3 - r_b1);
+
+             if ((abs_b1_2 >= limit) && (abs_b2_3 >= limit) && (abs_b3_1 >= limit)) {
+                 break;
+             }
+         }
          // setRightanswer
          Random rnd4 = new Random();
-         check_answer = rnd4.nextInt(4)+1;
+         check_answer = rnd4.nextInt(3) + 1;
          String r16 = Integer.toHexString(r);
          String g16 = Integer.toHexString(g);
          String b16 = Integer.toHexString(b);
-         switch (check_answer){
+         switch (check_answer) {
              case 1:
-                  answer1.setText("r16"+"g16"+"b16");
+                 answer1.setText("#" + "r16" + "g16" + "b16");
+
                  break;
              case 2:
-                  answer2.setText("r16"+"g16"+"b16");
+                 answer2.setText("#" + "r16" + "g16" + "b16");
+
                  break;
              case 3:
-                 answer3.setText("r16"+"g16"+"b16");
+                 answer3.setText("#" + "r16" + "g16" + "b16");
+
                  break;
              case 4:
-                 answer4.setText("r16"+"g16"+"b16");
+                 answer4.setText("#" + "r16" + "g16" + "b16");
+
                  break;
          }
-         //createChoices
-
 
      }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
