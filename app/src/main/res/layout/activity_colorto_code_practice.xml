@@ -47,15 +47,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/answer4"
-        android:layout_alignStart="@+id/answer1"
         android:layout_alignTop="@+id/answer1"
-        android:layout_toStartOf="@+id/answer2"
-        android:id="@+id/frameLayout2">
+        android:id="@+id/frameLayout2"
+        android:layout_alignStart="@+id/frameLayout6"
+        android:layout_toStartOf="@+id/answer2">
 
         <ImageView
             android:layout_width="89dp"
             android:layout_height="match_parent"
-            android:id="@+id/imageView3"
+            android:id="@+id/check_select1"
             android:layout_gravity="left|top" />
     </FrameLayout>
 
@@ -92,14 +92,6 @@
         android:onClick="select2"
         android:layout_alignTop="@+id/answer1"
         android:layout_alignStart="@+id/answer4" />
-
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/frameLayout2"
-        android:layout_alignStart="@+id/answer3"
-        android:layout_toStartOf="@+id/answer4"
-        android:layout_alignBottom="@+id/answer3" />
 
     <FrameLayout
         android:layout_width="match_parent"

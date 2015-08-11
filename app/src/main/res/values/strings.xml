@@ -7,5 +7,7 @@
     <string name="title_activity_colorto_code_practice">ColortoCode_practiceActivity</string>
     <string name="title_activity_codetocolor">codetocolorActivity</string>
     <string name="title_activity_colorto_code">ColortoCodeActivity</string>
+    <string name="title_activity_codeto_color">CodetoColorActivity</string>
+    <string name="title_activity_menu">menuActivity</string>
 
 </resources>
