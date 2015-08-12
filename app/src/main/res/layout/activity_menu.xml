@@ -31,7 +31,7 @@
         android:text="Practice"
         android:id="@+id/textView"
         android:layout_above="@+id/button"
-        android:layout_toStartOf="@+id/button4"
+        android:layout_toStartOf="@+id/CodertoColor_practice"
         android:layout_marginBottom="25dp" />
 
     <com.beardedhen.androidbootstrap.BootstrapButton
@@ -60,7 +60,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="CodetoColor"
-        android:id="@+id/button4"
+        android:id="@+id/CodertoColor_practice"
         bootstrap:bb_type="info"
         bootstrap:bb_roundedCorners="true"
         android:layout_gravity="center_horizontal"
