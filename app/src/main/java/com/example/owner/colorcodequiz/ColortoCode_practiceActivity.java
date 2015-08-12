@@ -1,5 +1,8 @@
 package com.example.owner.colorcodequiz;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -37,52 +40,48 @@ public class ColortoCode_practiceActivity extends AppCompatActivity {
     private int check_answer;
 
     private boolean nextquestion;
-    private RelativeLayout backGround;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_colorto_code_practice);
-        check_answer =1 ;
+        check_answer = 1;
         gameCount = 1;
         answer1 = (Button) findViewById(R.id.answer1);
         answer2 = (Button) findViewById(R.id.answer2);
         answer3 = (Button) findViewById(R.id.answer3);
         answer4 = (Button) findViewById(R.id.select4);
 
-        progress =(TextView)findViewById(R.id.progress);
+        progress = (TextView) findViewById(R.id.progress);
         red = (TextView) findViewById(R.id.red);
         green = (TextView) findViewById(R.id.green);
         blue = (TextView) findViewById(R.id.blue);
 
-        check_select1 = (ImageView)findViewById(R.id.check_select1);
-        check_select2 = (ImageView)findViewById(R.id.check_select2);
-        check_select3 = (ImageView)findViewById(R.id.check_select3);
-        check_select4 = (ImageView)findViewById(R.id.check_select4);
+        check_select1 = (ImageView) findViewById(R.id.check_select1);
+        check_select2 = (ImageView) findViewById(R.id.check_select2);
+        check_select3 = (ImageView) findViewById(R.id.check_select3);
+        check_select4 = (ImageView) findViewById(R.id.check_select4);
 
-        backGround = (RelativeLayout)findViewById(R.id.RelativeLayout);
+
 
     }
+
     public void select1(View view) {
-        if (nextquestion == false)   {
+        if (nextquestion == false) {
             if (check_answer == 1) {
                 check_select1.setImageResource(R.drawable.maru);
             } else {
                 check_select1.setImageResource(R.drawable.batu);
             }
-            gameCount = gameCount + 1;
-            if (gameCount <= 10) {
-                progress.setText("Progress:" + gameCount + "/10");
-            }
-            nextquestion = true;
-            if(gameCount ==10){
+            checkprogress();
+        } else {
+            setanswer();
+            nextquestion = false;
+            check_select1.setImageDrawable(null);
+        }
+    }
 
-            }else {
-                setanswer();
-                nextquestion = false;
-                check_select1.setImageDrawable(null);
-            }
-        }}
+
 
     public void select2(View view) {
         if (nextquestion == false) {
@@ -91,11 +90,7 @@ public class ColortoCode_practiceActivity extends AppCompatActivity {
             } else {
                 check_select2.setImageResource(R.drawable.batu);
             }
-            gameCount = gameCount + 1;
-            if (gameCount <= 10) {
-                progress.setText("Progress:" + gameCount + "/10");
-            }
-            nextquestion = true;
+           checkprogress();
         }else {
             setanswer();
             nextquestion = false;
@@ -110,11 +105,7 @@ public class ColortoCode_practiceActivity extends AppCompatActivity {
             } else {
                 check_select3.setImageResource(R.drawable.batu);
             }
-            gameCount = gameCount + 1;
-            if (gameCount <= 10) {
-                progress.setText("Progress:" + gameCount + "/10");
-            }
-            nextquestion = true;
+            checkprogress();
         }else {
             setanswer();
             nextquestion = false;
@@ -129,11 +120,7 @@ public class ColortoCode_practiceActivity extends AppCompatActivity {
             } else {
                 check_select4.setImageResource(R.drawable.batu);
             }
-            gameCount = gameCount + 1;
-            if (gameCount <= 10) {
-                progress.setText("Progress:" + gameCount + "/10");
-            }
-            nextquestion = true;
+            checkprogress();
         }else {
             setanswer();
             nextquestion = false;
@@ -375,6 +362,28 @@ public class ColortoCode_practiceActivity extends AppCompatActivity {
             answer4.setText("#880088");
 
             check_answer = 2;
+        }
+    }
+    public void checkprogress(){
+        gameCount = gameCount + 1;
+        if (gameCount <= 10) {
+            progress.setText("Progress:" + gameCount + "/10");
+        }
+        nextquestion = true;
+        if(gameCount ==10){
+
+
+            new AlertDialog.Builder(ColortoCode_practiceActivity.this)
+                    .setTitle("title")
+                    .setMessage("message")
+                    .setPositiveButton("OK", new DialogInterface.OnClickListener(){
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            // OK button pressed
+                            Intent intent = new Intent(ColortoCode_practiceActivity.this, MenuActivity.class);
+                            startActivity(intent);
+                        }
+                    }).show();
         }
     }
     @Override

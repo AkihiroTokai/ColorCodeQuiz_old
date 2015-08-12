@@ -1,10 +1,28 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:bootstrap="http://schemas.android.com/apk/res-auto"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="com.example.owner.colorcodequiz.MenuActivity">
+
+    <com.beardedhen.androidbootstrap.BootstrapButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ColortoCode"
+        android:id="@+id/button2"
+        bootstrap:bb_type="success"
+        bootstrap:bb_roundedCorners="true"
+        android:layout_gravity="center_horizontal"
+        android:onClick="ColortoCode"
+        android:layout_above="@+id/textView"
+        android:layout_alignEnd="@+id/textView"
+        android:layout_marginBottom="32dp"
+        android:layout_marginRight="10dp"
+        />
 
     <TextView
         android:layout_width="wrap_content"
@@ -12,9 +30,21 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Practice"
         android:id="@+id/textView"
-        android:layout_marginBottom="76dp"
+        android:layout_above="@+id/button"
+        android:layout_toStartOf="@+id/button4"
+        android:layout_marginBottom="25dp" />
+
+    <com.beardedhen.androidbootstrap.BootstrapButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ColortoCode"
+        android:id="@+id/button"
+        bootstrap:bb_type="success"
+        bootstrap:bb_roundedCorners="true"
+        android:layout_gravity="center_horizontal"
         android:layout_above="@+id/textView2"
-        android:layout_centerHorizontal="true" />
+        android:layout_toStartOf="@+id/textView2"
+        android:layout_marginBottom="38dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -22,26 +52,111 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Others"
         android:id="@+id/textView2"
-        android:layout_marginBottom="66dp"
+        android:layout_marginBottom="83dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
+
+    <com.beardedhen.androidbootstrap.BootstrapButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CodetoColor"
+        android:id="@+id/button4"
+        bootstrap:bb_type="info"
+        bootstrap:bb_roundedCorners="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_alignTop="@+id/button"
+        android:layout_toEndOf="@+id/textView2"
+        android:nestedScrollingEnabled="false"
+        android:onClick="CodetoColor_practice" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Setting"
         android:id="@+id/textView3"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Randommode"
+        android:id="@+id/Randommode"
+        android:layout_marginBottom="22dp"
+        android:layout_above="@+id/button2"
         android:layout_centerHorizontal="true"
-        android:layout_above="@+id/textView" />
+        android:checked="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Mode:"
+        android:id="@+id/textView4"
+        android:gravity="center_vertical"
+        android:layout_alignBottom="@+id/Randommode"
+        android:layout_alignStart="@+id/textView5"
+        android:layout_alignTop="@+id/Randommode"
+        android:layout_toStartOf="@+id/button2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Start:"
+        android:id="@+id/textView5"
+        android:gravity="center_vertical"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@+id/Randommode"
+        android:layout_alignTop="@+id/button2"
+        android:layout_alignBottom="@+id/button2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Comming Soon !"
+        android:id="@+id/textView6"
+        android:layout_marginBottom="37dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/Randommode" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:inputType="numberSigned"
+        android:inputType="number"
         android:ems="10"
         android:id="@+id/editText"
-        android:layout_above="@+id/textView3"
-        android:layout_toStartOf="@+id/textView3"
-        android:layout_marginBottom="114dp" />
+        android:layout_marginTop="23dp"
+        android:layout_below="@+id/textView3"
+        android:layout_toEndOf="@+id/textView6"
+        android:text="10"
+        android:gravity="center" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Number of question:"
+        android:id="@+id/textView7"
+        android:layout_alignBottom="@+id/editText"
+        android:layout_alignEnd="@+id/textView" />
+
+    <com.beardedhen.androidbootstrap.BootstrapButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CodetoColor"
+        android:id="@+id/button5"
+        bootstrap:bb_type="info"
+        bootstrap:bb_roundedCorners="true"
+        android:layout_gravity="center_horizontal"
+        android:nestedScrollingEnabled="false"
+        android:onClick="CodetoColor"
+        android:layout_below="@+id/Randommode"
+        android:layout_toEndOf="@+id/button2"
+
+        />
+
 
 </RelativeLayout>

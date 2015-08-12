@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="VcsDirectoryMappings">
-    <mapping directory="" vcs="" />
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/IntentTest" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/MyAlbum" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Recogrening　manaca" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/app/Android-Bootstrap" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/eight/Android" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/five" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/five/five" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/five/whack-a-mole" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/musicplayer" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/xml" vcs="Git" />
   </component>
 </project>
-

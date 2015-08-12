@@ -1,10 +1,6 @@
 package com.example.owner.colorcodequiz;
 
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
-import android.support.v7.app.ActionBarActivity;
+
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -21,9 +17,6 @@ public class ColortoCodeActivity extends AppCompatActivity {
 
 
     private TextView progress;
-    private TextView red;
-    private TextView green;
-    private TextView blue;
 
     private ImageView question;
     private ImageView check_select1;
@@ -40,13 +33,12 @@ public class ColortoCodeActivity extends AppCompatActivity {
     private int check_answer;
 
     private boolean nextquestion;
-    private RelativeLayout backGround;
+    //private RelativeLayout backGround;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_colorto_code);
-        check_answer =1 ;
         gameCount = 1;
         answer1 = (Button) findViewById(R.id.answer1);
         answer2 = (Button) findViewById(R.id.answer2);
@@ -54,16 +46,13 @@ public class ColortoCodeActivity extends AppCompatActivity {
         answer4 = (Button) findViewById(R.id.select4);
 
         progress =(TextView)findViewById(R.id.progress);
-        red = (TextView) findViewById(R.id.red);
-        green = (TextView) findViewById(R.id.green);
-        blue = (TextView) findViewById(R.id.blue);
 
         check_select1 = (ImageView)findViewById(R.id.check_select1);
         check_select2 = (ImageView)findViewById(R.id.check_select2);
         check_select3 = (ImageView)findViewById(R.id.check_select3);
         check_select4 = (ImageView)findViewById(R.id.check_select4);
 
-        backGround = (RelativeLayout)findViewById(R.id.RelativeLayout);
+       // backGround = (RelativeLayout)findViewById(R.id.RelativeLayout);
 
         setanswer();
     }
@@ -151,22 +140,10 @@ public class ColortoCodeActivity extends AppCompatActivity {
          Random rnd3 = new Random();
          int b = rnd3.nextInt(256);
 
-         //setQuestionImage
-         Bitmap bitmap = Bitmap.createBitmap(500, 500, Bitmap.Config.ARGB_8888);
+         int r_a1,r_a2,r_a3,g_a1,g_a2,g_a3,b_a1,b_a2,b_a3;
 
-         Canvas canvas;
-         canvas = new Canvas(bitmap);
-         canvas.drawColor(Color.WHITE);
+         //setQuestionColorcode
 
-         Paint paint;
-         paint = new Paint();
-         question.setBackgroundColor(Color.rgb(r, g, b));
-         paint.setStyle(Paint.Style.FILL);
-         paint.setAntiAlias(true);
-
-         canvas.drawCircle(100, 100, 10, paint);
-
-         question.setImageBitmap(bitmap);
 
 
          //createChoicesColorcode
@@ -174,11 +151,11 @@ public class ColortoCodeActivity extends AppCompatActivity {
          while (true) {
 
              Random rnd5 = new Random();
-             int r_a1 = rnd5.nextInt(256);
+              r_a1 = rnd5.nextInt(256);
              Random rnd6 = new Random();
-             int r_a2 = rnd6.nextInt(256);
+              r_a2 = rnd6.nextInt(256);
              Random rnd7 = new Random();
-             int r_a3 = rnd7.nextInt(256);
+              r_a3 = rnd7.nextInt(256);
 
              int abs_r1_2 = Math.abs(r_a1 - r_a2);
              int abs_r2_3 = Math.abs(r_a2 - r_a3);
@@ -192,15 +169,15 @@ public class ColortoCodeActivity extends AppCompatActivity {
          while (true) {
 
              Random rnd8 = new Random();
-             int r_g1 = rnd8.nextInt(256);
+              g_a1 = rnd8.nextInt(256);
              Random rnd9 = new Random();
-             int r_g2 = rnd9.nextInt(256);
+              g_a2 = rnd9.nextInt(256);
              Random rnd10 = new Random();
-             int r_g3 = rnd10.nextInt(256);
+              g_a3 = rnd10.nextInt(256);
 
-             int abs_g1_2 = Math.abs(r_g1 - r_g2);
-             int abs_g2_3 = Math.abs(r_g2 - r_g3);
-             int abs_g3_1 = Math.abs(r_g3 - r_g1);
+             int abs_g1_2 = Math.abs(g_a1 - g_a2);
+             int abs_g2_3 = Math.abs(g_a2 - g_a3);
+             int abs_g3_1 = Math.abs(g_a3 - g_a1);
 
              if ((abs_g1_2 >= limit) && (abs_g2_3 >= limit) && (abs_g3_1 >= limit)) {
                  break;
@@ -211,42 +188,63 @@ public class ColortoCodeActivity extends AppCompatActivity {
          while (true) {
 
              Random rnd11 = new Random();
-             int r_b1 = rnd11.nextInt(256);
+              b_a1 = rnd11.nextInt(256);
              Random rnd12 = new Random();
-             int r_b2 = rnd12.nextInt(256);
+              b_a2 = rnd12.nextInt(256);
              Random rnd13 = new Random();
-             int r_b3 = rnd13.nextInt(256);
+              b_a3 = rnd13.nextInt(256);
 
-             int abs_b1_2 = Math.abs(r_b1 - r_b2);
-             int abs_b2_3 = Math.abs(r_b2 - r_b3);
-             int abs_b3_1 = Math.abs(r_b3 - r_b1);
+             int abs_b1_2 = Math.abs(b_a1 - b_a2);
+             int abs_b2_3 = Math.abs(b_a2 - b_a3);
+             int abs_b3_1 = Math.abs(b_a3 - b_a1);
 
              if ((abs_b1_2 >= limit) && (abs_b2_3 >= limit) && (abs_b3_1 >= limit)) {
                  break;
              }
          }
-         // setRightanswer
+         // setanswer
          Random rnd4 = new Random();
          check_answer = rnd4.nextInt(3) + 1;
          String r16 = Integer.toHexString(r);
          String g16 = Integer.toHexString(g);
          String b16 = Integer.toHexString(b);
+
+         String r_a1_16 = Integer.toHexString(r_a1);
+         String g_a1_16 = Integer.toHexString(g_a1);
+         String b_a1_16 = Integer.toHexString(b_a1);
+
+         String r_a2_16 = Integer.toHexString(r_a2);
+         String g_a2_16 = Integer.toHexString(g_a2);
+         String b_a2_16 = Integer.toHexString(b_a2);
+
+         String r_a3_16 = Integer.toHexString(r_a3);
+         String g_a3_16 = Integer.toHexString(g_a3);
+         String b_a3_16 = Integer.toHexString(b_a3);
+
          switch (check_answer) {
              case 1:
-                 answer1.setText("#" + "r16" + "g16" + "b16");
-
+                 answer1.setText("#" + r16 + g16 + b16);
+                 answer2.setText("#"+r_a1_16+g_a1_16+b_a1_16);
+                 answer3.setText("#"+r_a2_16+g_a2_16+b_a2_16);
+                 answer4.setText("#"+r_a3_16+g_a3_16+b_a3_16);
                  break;
              case 2:
-                 answer2.setText("#" + "r16" + "g16" + "b16");
-
+                 answer1.setText("#"+r_a1_16+g_a1_16 + b_a1_16);
+                 answer2.setText("#" + r16 + g16 + b16);
+                 answer3.setText("#"+r_a2_16+g_a2_16+b_a2_16);
+                 answer4.setText("#"+r_a3_16+g_a3_16+b_a3_16);
                  break;
              case 3:
-                 answer3.setText("#" + "r16" + "g16" + "b16");
-
+                 answer1.setText("#"+r_a1_16+g_a1_16 + b_a1_16);
+                 answer2.setText("#"+r_a2_16+g_a2_16+b_a2_16);
+                 answer3.setText("#" + r16 + g16 + b16);
+                 answer4.setText("#"+r_a3_16+g_a3_16+b_a3_16);
                  break;
              case 4:
-                 answer4.setText("#" + "r16" + "g16" + "b16");
-
+                 answer1.setText("#"+r_a1_16+g_a1_16 + b_a1_16);
+                 answer2.setText("#"+r_a2_16+g_a2_16+b_a2_16);
+                 answer3.setText("#"+r_a3_16+g_a3_16+b_a3_16);
+                 answer4.setText("#" + r16 + g16 + b16);
                  break;
          }
 

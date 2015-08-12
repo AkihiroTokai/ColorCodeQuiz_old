@@ -1,5 +1,8 @@
 package com.example.owner.colorcodequiz;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
 
 import android.os.Bundle;
@@ -11,8 +14,11 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.astuetz.PagerSlidingTabStrip;
+
+//import java.util.logging.Handler;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -33,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
     private int check_answer;
     private boolean nextquestion;
     private RelativeLayout backGround;
+
+
 
 
     @Override
@@ -56,43 +64,29 @@ public class MainActivity extends AppCompatActivity {
         check_select3 = (ImageView)findViewById(R.id.check_select3);
         check_select4 = (ImageView)findViewById(R.id.check_select4);
 
-        backGround = (RelativeLayout)findViewById(R.id.RelativeLayout);
-
-        backGround.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-              if (gameCount == 10){
-                  //Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                  //startActivity(intent);
-              }
-            }
-            });
         nextquestion = false;
 
         PagerSlidingTabStrip tabs = (PagerSlidingTabStrip) findViewById(R.id.tabs);
         //tabs.setViewPager(mViewPager);
 
     }
+
     public void select1(View view) {
-        if (nextquestion == false)   {
+        if (nextquestion == false) {
             if (check_answer == 1) {
                 check_select1.setImageResource(R.drawable.maru);
             } else {
                 check_select1.setImageResource(R.drawable.batu);
             }
-        gameCount = gameCount + 1;
-        if (gameCount <= 10) {
-            progress.setText("Progress:" + gameCount + "/10");
-        }
-        nextquestion = true;
-        if(gameCount ==10){
-
+            checkprogress();
         }else {
             setanswer();
             nextquestion = false;
             check_select1.setImageDrawable(null);
         }
-    }}
+    }
+
+
 
     public void select2(View view) {
         if (nextquestion == false) {
@@ -101,11 +95,7 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 check_select2.setImageResource(R.drawable.batu);
             }
-            gameCount = gameCount + 1;
-            if (gameCount <= 10) {
-                progress.setText("Progress:" + gameCount + "/10");
-            }
-            nextquestion = true;
+           checkprogress();
         }else {
             setanswer();
             nextquestion = false;
@@ -120,11 +110,7 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 check_select3.setImageResource(R.drawable.batu);
             }
-            gameCount = gameCount + 1;
-            if (gameCount <= 10) {
-                progress.setText("Progress:" + gameCount + "/10");
-            }
-            nextquestion = true;
+        checkprogress();
         }else {
             setanswer();
             nextquestion = false;
@@ -139,11 +125,7 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 check_select4.setImageResource(R.drawable.batu);
             }
-            gameCount = gameCount + 1;
-            if (gameCount <= 10) {
-                progress.setText("Progress:" + gameCount + "/10");
-            }
-            nextquestion = true;
+        checkprogress();
         }else {
             setanswer();
             nextquestion = false;
@@ -151,7 +133,29 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void setanswer() {
+    private void checkprogress(){
+        gameCount = gameCount + 1;
+        if (gameCount <= 10) {
+            progress.setText("Progress:" + gameCount + "/10");
+        }
+        nextquestion = true;
+        if(gameCount ==10){
+            new AlertDialog.Builder(MainActivity.this)
+                    .setTitle("title")
+                    .setMessage("message")
+                    .setPositiveButton("OK", new DialogInterface.OnClickListener(){
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            // OK button pressed
+                            Intent intent = new Intent(MainActivity.this, MenuActivity.class);
+                            startActivity(intent);
+                        }
+                    }).show();
+        }
+    }
+
+    private void setanswer() {
+
         if (gameCount == 2) {
             red.setText("ff");
             green.setText("ff");
@@ -253,6 +257,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+
+
+
+
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -275,3 +284,4 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 }
+

@@ -74,24 +74,25 @@
         android:layout_height="match_parent"
         android:layout_alignTop="@+id/frameLayout7"
         android:layout_alignEnd="@+id/answer2"
-        android:layout_above="@+id/answer4"
         android:layout_toEndOf="@+id/frameLayout7"
-        android:id="@+id/frameLayout8">
+        android:id="@+id/frameLayout8"
+        android:layout_above="@+id/frameLayout15">
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/check_select2" />
-    </FrameLayout>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="#00ffff"
-        android:id="@+id/answer2"
-        android:onClick="select2"
-        android:layout_alignTop="@+id/answer1"
-        android:layout_alignStart="@+id/progress" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="#00ffff"
+            android:id="@+id/answer2"
+            android:onClick="select2"
+            android:layout_alignTop="@+id/answer1"
+            android:layout_alignStart="@+id/progress"
+            android:layout_gravity="center_horizontal|top" />
+    </FrameLayout>
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -129,7 +130,8 @@
         android:layout_below="@+id/frameLayout7"
         android:layout_alignEnd="@+id/frameLayout8"
         android:layout_alignParentBottom="true"
-        android:layout_toEndOf="@+id/frameLayout9">
+        android:layout_toEndOf="@+id/frameLayout9"
+        android:id="@+id/frameLayout15">
 
         <ImageView
             android:layout_width="match_parent"
