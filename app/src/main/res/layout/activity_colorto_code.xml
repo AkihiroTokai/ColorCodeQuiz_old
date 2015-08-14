@@ -53,6 +53,16 @@
             android:layout_height="match_parent"
             android:id="@+id/check_select1" />
 
+        <TextView
+            android:layout_width="89dp"
+            android:layout_height="wrap_content"
+            android:text="New Button"
+            android:id="@+id/answer1"
+            android:layout_gravity="center"
+            android:onClick="select1"
+            android:layout_above="@+id/frameLayout4"
+            android:layout_alignStart="@+id/imageView" />
+
     </FrameLayout>
 
     <FrameLayout
@@ -123,16 +133,6 @@
             android:layout_gravity="center" />
 
     </FrameLayout>
-
-    <TextView
-        android:layout_width="89dp"
-        android:layout_height="wrap_content"
-        android:text="New Button"
-        android:id="@+id/answer1"
-        android:layout_gravity="center"
-        android:onClick="select1"
-        android:layout_above="@+id/frameLayout4"
-        android:layout_alignStart="@+id/imageView" />
 
 
 </RelativeLayout>
