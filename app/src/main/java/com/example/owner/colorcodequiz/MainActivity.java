@@ -31,10 +31,10 @@ public class MainActivity extends AppCompatActivity {
     private ImageView check_select2;
     private ImageView check_select3;
     private ImageView check_select4;
-    private Button answer1;
-    private Button answer2;
-    private Button answer3;
-    private Button answer4;
+    private TextView answer1;
+    private TextView answer2;
+    private TextView answer3;
+    private TextView answer4;
     private int gameCount;
     private int check_answer;
     private boolean nextquestion;
@@ -49,10 +49,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         check_answer = 1;
         gameCount = 1;
-        answer1 = (Button) findViewById(R.id.answer1);
-        answer2 = (Button) findViewById(R.id.answer2);
-        answer3 = (Button) findViewById(R.id.answer3);
-        answer4 = (Button) findViewById(R.id.select4);
+        answer1 = (TextView) findViewById(R.id.answer1);
+        answer2 = (TextView) findViewById(R.id.answer2);
+        answer3 = (TextView) findViewById(R.id.answer3);
+        answer4 = (TextView) findViewById(R.id.answer4);
 
         progress =(TextView)findViewById(R.id.progress);
         red = (TextView) findViewById(R.id.red);
@@ -65,9 +65,7 @@ public class MainActivity extends AppCompatActivity {
         check_select4 = (ImageView)findViewById(R.id.check_select4);
 
         nextquestion = false;
-
-        PagerSlidingTabStrip tabs = (PagerSlidingTabStrip) findViewById(R.id.tabs);
-        //tabs.setViewPager(mViewPager);
+         setanswer();
 
     }
 

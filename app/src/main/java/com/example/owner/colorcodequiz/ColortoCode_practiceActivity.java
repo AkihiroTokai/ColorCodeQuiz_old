@@ -50,7 +50,7 @@ public class ColortoCode_practiceActivity extends AppCompatActivity {
         answer1 = (Button) findViewById(R.id.answer1);
         answer2 = (Button) findViewById(R.id.answer2);
         answer3 = (Button) findViewById(R.id.answer3);
-        answer4 = (Button) findViewById(R.id.select4);
+        answer4 = (Button) findViewById(R.id.answer4);
 
         progress = (TextView) findViewById(R.id.progress);
         red = (TextView) findViewById(R.id.red);
@@ -61,8 +61,9 @@ public class ColortoCode_practiceActivity extends AppCompatActivity {
         check_select2 = (ImageView) findViewById(R.id.check_select2);
         check_select3 = (ImageView) findViewById(R.id.check_select3);
         check_select4 = (ImageView) findViewById(R.id.check_select4);
+        question = (ImageView)findViewById(R.id.imageView);
 
-
+        setanswer();
 
     }
 

@@ -44,7 +44,8 @@
         android:layout_gravity="center_horizontal"
         android:layout_above="@+id/textView2"
         android:layout_toStartOf="@+id/textView2"
-        android:layout_marginBottom="38dp" />
+        android:layout_marginBottom="38dp"
+        android:onClick="ColortoCode_practice" />
 
     <TextView
         android:layout_width="wrap_content"

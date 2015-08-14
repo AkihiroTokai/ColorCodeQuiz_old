@@ -48,17 +48,17 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/check_select1"
-            android:layout_gravity="left|bottom" />
+            android:layout_gravity="center" />
 
     </FrameLayout>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <TextView
+        android:layout_width="89dp"
+        android:layout_height="55dp"
         android:text="New Button"
         android:id="@+id/answer1"
         android:layout_below="@+id/questioncode"
-        android:layout_alignParentStart="true"
+        android:layout_alignParentStart="false"
         android:layout_marginStart="36dp"
         android:layout_marginTop="139dp"
         android:nestedScrollingEnabled="false"
@@ -80,7 +80,7 @@
             android:layout_gravity="center_horizontal|bottom" />
     </FrameLayout>
 
-    <Button
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="New Button"
@@ -104,7 +104,7 @@
             android:layout_gravity="center_vertical" />
     </FrameLayout>
 
-    <Button
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="New Button"
@@ -128,7 +128,7 @@
             android:layout_gravity="left|top" />
     </FrameLayout>
 
-    <Button
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="New Button"

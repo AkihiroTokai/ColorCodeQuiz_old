@@ -1,5 +1,8 @@
 package com.example.owner.colorcodequiz;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -28,6 +31,7 @@ public class CodetoColorActivity extends AppCompatActivity {
 
     private int gameCount;
     private int check_answer;
+    private int NoQ;
 
     private boolean nextquestion;
 
@@ -40,7 +44,7 @@ public class CodetoColorActivity extends AppCompatActivity {
         answer1 = (Button) findViewById(R.id.answer1);
         answer2 = (Button) findViewById(R.id.answer2);
         answer3 = (Button) findViewById(R.id.answer3);
-        answer4 = (Button) findViewById(R.id.select4);
+        answer4 = (Button) findViewById(R.id.answer4);
 
         progress =(TextView)findViewById(R.id.progress);
         questioncode = (TextView) findViewById(R.id.red);
@@ -49,6 +53,11 @@ public class CodetoColorActivity extends AppCompatActivity {
         check_select2 = (ImageView)findViewById(R.id.check_select2);
         check_select3 = (ImageView)findViewById(R.id.check_select3);
         check_select4 = (ImageView)findViewById(R.id.check_select4);
+
+        Intent intent = getIntent();
+        NoQ  = intent.getIntExtra("getnumber",0);
+        nextquestion = false ;
+        setanswer();
     }
 
     public void select1(View view) {
@@ -59,31 +68,61 @@ public class CodetoColorActivity extends AppCompatActivity {
                 check_select1.setImageResource(R.drawable.batu);
             }
             gameCount = gameCount + 1;
-            if (gameCount <= 10) {
-                progress.setText("Progress:" + gameCount + "/10");
+            if (gameCount < NoQ) {
+                progress.setText("Progress:" + gameCount + "/"+ NoQ);
+                nextquestion = true;
             }
-            nextquestion = true;
-            if(gameCount ==10){
+            if (gameCount == NoQ){
+                new AlertDialog.Builder(CodetoColorActivity.this)
+                        .setTitle("title")
+                        .setMessage("message")
+                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                // OK button pressed
+                                Intent intent = new Intent(CodetoColorActivity.this, MenuActivity.class);
+                                startActivity(intent);
+                            }
+                        }).show();
 
-            }else {
+            }
+        }else {
                 setanswer();
                 nextquestion = false;
                 check_select1.setImageDrawable(null);
-            }
-        }}
+        }
+    }
+
 
     public void select2(View view) {
         if (nextquestion == false) {
             if (check_answer == 2) {
+                check_select1.setImageDrawable(null);
                 check_select2.setImageResource(R.drawable.maru);
+                check_select3.setImageDrawable(null);
+                check_select4.setImageDrawable(null);
             } else {
                 check_select2.setImageResource(R.drawable.batu);
             }
             gameCount = gameCount + 1;
-            if (gameCount <= 10) {
-                progress.setText("Progress:" + gameCount + "/10");
+            if (gameCount < NoQ) {
+                progress.setText("Progress:" + gameCount + "/"+NoQ);
+                nextquestion = true;
             }
-            nextquestion = true;
+            if (gameCount == NoQ){
+                new AlertDialog.Builder(CodetoColorActivity.this)
+                        .setTitle("title")
+                        .setMessage("message")
+                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                // OK button pressed
+                                Intent intent = new Intent(CodetoColorActivity.this, MenuActivity.class);
+                                startActivity(intent);
+                            }
+                        }).show();
+
+            }
         }else {
             setanswer();
             nextquestion = false;
@@ -99,10 +138,24 @@ public class CodetoColorActivity extends AppCompatActivity {
                 check_select3.setImageResource(R.drawable.batu);
             }
             gameCount = gameCount + 1;
-            if (gameCount <= 10) {
-                progress.setText("Progress:" + gameCount + "/10");
+            if (gameCount < NoQ) {
+                progress.setText("Progress:" + gameCount + "/"+NoQ);
             }
             nextquestion = true;
+            if (gameCount ==  NoQ){
+                new AlertDialog.Builder(CodetoColorActivity.this)
+                        .setTitle("title")
+                        .setMessage("message")
+                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                // OK button pressed
+                                Intent intent = new Intent(CodetoColorActivity.this, MenuActivity.class);
+                                startActivity(intent);
+                            }
+                        }).show();
+
+            }
         }else {
             setanswer();
             nextquestion = false;
@@ -118,10 +171,24 @@ public class CodetoColorActivity extends AppCompatActivity {
                 check_select4.setImageResource(R.drawable.batu);
             }
             gameCount = gameCount + 1;
-            if (gameCount <= 10) {
-                progress.setText("Progress:" + gameCount + "/10");
+            if (gameCount < NoQ) {
+                progress.setText("Progress:" + gameCount + "/"+ NoQ);
+                nextquestion = true;
             }
-            nextquestion = true;
+             if (gameCount == NoQ){
+                 new AlertDialog.Builder(CodetoColorActivity.this)
+                         .setTitle("title")
+                         .setMessage("message")
+                         .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                             @Override
+                             public void onClick(DialogInterface dialog, int which) {
+                                 // OK button pressed
+                                 Intent intent = new Intent(CodetoColorActivity.this, MenuActivity.class);
+                                 startActivity(intent);
+                             }
+                         }).show();
+
+             }
         }else {
             setanswer();
             nextquestion = false;
