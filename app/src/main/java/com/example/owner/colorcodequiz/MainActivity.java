@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
     private int gameCount;
     private int check_answer;
     private boolean nextquestion;
-    private RelativeLayout backGround;
+
 
 
 
@@ -153,8 +153,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setanswer() {
-
-        if (gameCount == 2) {
+         if (gameCount == 2) {
             red.setText("ff");
             green.setText("ff");
             blue.setText("ff");
@@ -165,7 +164,7 @@ public class MainActivity extends AppCompatActivity {
             check_answer = 2;
         }
 
-        if (gameCount == 3) {
+        else if (gameCount == 3) {
             red.setText("00");
             green.setText("ff");
             blue.setText("ff");
@@ -176,7 +175,7 @@ public class MainActivity extends AppCompatActivity {
             check_answer = 1;
         }
 
-        if (gameCount == 4) {
+        else if (gameCount == 4) {
             red.setText("ff");
             green.setText("00");
             blue.setText("ff");
@@ -187,7 +186,7 @@ public class MainActivity extends AppCompatActivity {
             check_answer = 2;
         }
 
-        if (gameCount == 5) {
+        else if (gameCount == 5) {
             red.setText("ff");
             green.setText("ff");
             blue.setText("00");
@@ -198,7 +197,7 @@ public class MainActivity extends AppCompatActivity {
             check_answer = 2;
         }
 
-        if (gameCount == 6) {
+        else if (gameCount == 6) {
             red.setText("ff");
             green.setText("00");
             blue.setText("00");
@@ -209,7 +208,7 @@ public class MainActivity extends AppCompatActivity {
             check_answer = 1;
         }
 
-        if (gameCount == 7) {
+        else if (gameCount == 7) {
             red.setText("00");
             green.setText("ff");
             blue.setText("00");
@@ -220,7 +219,7 @@ public class MainActivity extends AppCompatActivity {
             check_answer = 2;
         }
 
-        if (gameCount == 8) {
+        else if (gameCount == 8) {
             red.setText("00");
             green.setText("00");
             blue.setText("ff");
@@ -231,7 +230,7 @@ public class MainActivity extends AppCompatActivity {
             check_answer = 2;
         }
 
-        if (gameCount == 9) {
+        else if (gameCount == 9) {
             red.setText("88");
             green.setText("00");
             blue.setText("88");
@@ -242,7 +241,7 @@ public class MainActivity extends AppCompatActivity {
             check_answer = 1;
         }
 
-        if (gameCount == 10) {
+        else if (gameCount == 10) {
             red.setText("00");
             green.setText("88");
             blue.setText("88");
