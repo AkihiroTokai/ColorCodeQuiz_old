@@ -25,16 +25,16 @@ public class ColortoCode_practiceActivity extends AppCompatActivity {
     private TextView green;
     private TextView blue;
 
+    private TextView answer1;
+    private TextView answer2;
+    private TextView answer3;
+    private TextView answer4;
+
     private ImageView question;
     private ImageView check_select1;
     private ImageView check_select2;
     private ImageView check_select3;
     private ImageView check_select4;
-
-    private Button answer1;
-    private Button answer2;
-    private Button answer3;
-    private Button answer4;
 
     private int gameCount;
     private int check_answer;
@@ -47,10 +47,10 @@ public class ColortoCode_practiceActivity extends AppCompatActivity {
         setContentView(R.layout.activity_colorto_code_practice);
         check_answer = 1;
         gameCount = 1;
-        answer1 = (Button) findViewById(R.id.answer1);
-        answer2 = (Button) findViewById(R.id.answer2);
-        answer3 = (Button) findViewById(R.id.answer3);
-        answer4 = (Button) findViewById(R.id.answer4);
+        answer1 = (TextView) findViewById(R.id.answer1);
+        answer2 = (TextView) findViewById(R.id.answer2);
+        answer3 = (TextView) findViewById(R.id.answer3);
+        answer4 = (TextView) findViewById(R.id.answer4);
 
         progress = (TextView) findViewById(R.id.progress);
         red = (TextView) findViewById(R.id.red);
@@ -78,7 +78,6 @@ public class ColortoCode_practiceActivity extends AppCompatActivity {
         } else {
             setanswer();
             nextquestion = false;
-            check_select1.setImageDrawable(null);
         }
     }
 
@@ -95,7 +94,6 @@ public class ColortoCode_practiceActivity extends AppCompatActivity {
         }else {
             setanswer();
             nextquestion = false;
-            check_select2.setImageDrawable(null);
         }
     }
 
@@ -110,7 +108,6 @@ public class ColortoCode_practiceActivity extends AppCompatActivity {
         }else {
             setanswer();
             nextquestion = false;
-            check_select3.setImageDrawable(null);
         }
     }
 
@@ -125,26 +122,38 @@ public class ColortoCode_practiceActivity extends AppCompatActivity {
         }else {
             setanswer();
             nextquestion = false;
-            check_select4.setImageDrawable(null);
         }
     }
 
     public void setanswer() {
-        if (gameCount == 2) {
+        check_select1.setImageDrawable(null);
+        check_select2.setImageDrawable(null);
+        check_select3.setImageDrawable(null);
+        check_select4.setImageDrawable(null);
+        if (gameCount == 1) {
             //setQuestionImage
             Bitmap bitmap = Bitmap.createBitmap(500, 500, Bitmap.Config.ARGB_8888);
 
             Canvas canvas;
             canvas = new Canvas(bitmap);
-            canvas.drawColor(Color.WHITE);
+            canvas.drawColor(Color.parseColor("#000000"));
 
-            Paint paint;
-            paint = new Paint();
-            question.setBackgroundColor(Color.parseColor("#ffffff")) ;
-            paint.setStyle(Paint.Style.FILL);
-            paint.setAntiAlias(true);
+            question.setImageBitmap(bitmap);
+            //setChoices
+            answer1.setText("#000000");
+            answer2.setText("#ffff00");
+            answer3.setText("#ff00ff");
+            answer4.setText("#ffffff");
+            check_answer = 1;
+        }
 
-            canvas.drawCircle(100, 100, 10, paint);
+        else if (gameCount == 2) {
+            //setQuestionImage
+            Bitmap bitmap = Bitmap.createBitmap(500, 500, Bitmap.Config.ARGB_8888);
+
+            Canvas canvas;
+            canvas = new Canvas(bitmap);
+            canvas.drawColor(Color.parseColor("#ffffff"));
 
             question.setImageBitmap(bitmap);
             //setChoices
@@ -155,21 +164,13 @@ public class ColortoCode_practiceActivity extends AppCompatActivity {
             check_answer = 2;
         }
 
-        if (gameCount == 3) {
+        else if (gameCount == 3) {
             //setQuestionImage
             Bitmap bitmap = Bitmap.createBitmap(500, 500, Bitmap.Config.ARGB_8888);
 
             Canvas canvas;
             canvas = new Canvas(bitmap);
-            canvas.drawColor(Color.WHITE);
-
-            Paint paint;
-            paint = new Paint();
-            question.setBackgroundColor(Color.parseColor("#00ffff")) ;
-            paint.setStyle(Paint.Style.FILL);
-            paint.setAntiAlias(true);
-
-            canvas.drawCircle(100, 100, 10, paint);
+            canvas.drawColor(Color.parseColor("#00ffff"));
 
             question.setImageBitmap(bitmap);
             //setChoices
@@ -180,21 +181,13 @@ public class ColortoCode_practiceActivity extends AppCompatActivity {
             check_answer = 2;
         }
 
-        if (gameCount == 4) {
+        else if (gameCount == 4) {
             //setQuestionImage
             Bitmap bitmap = Bitmap.createBitmap(500, 500, Bitmap.Config.ARGB_8888);
 
             Canvas canvas;
             canvas = new Canvas(bitmap);
-            canvas.drawColor(Color.WHITE);
-
-            Paint paint;
-            paint = new Paint();
-            question.setBackgroundColor(Color.parseColor("#ff00ff")) ;
-            paint.setStyle(Paint.Style.FILL);
-            paint.setAntiAlias(true);
-
-            canvas.drawCircle(100, 100, 10, paint);
+            canvas.drawColor(Color.parseColor("#ff00ff"));
 
             question.setImageBitmap(bitmap);
             //setChoices
@@ -205,21 +198,13 @@ public class ColortoCode_practiceActivity extends AppCompatActivity {
             check_answer = 4;
         }
 
-        if (gameCount == 5) {
+        else if (gameCount == 5) {
             //setQuestionImage
             Bitmap bitmap = Bitmap.createBitmap(500, 500, Bitmap.Config.ARGB_8888);
 
             Canvas canvas;
             canvas = new Canvas(bitmap);
-            canvas.drawColor(Color.WHITE);
-
-            Paint paint;
-            paint = new Paint();
-            question.setBackgroundColor(Color.parseColor("#00ffff")) ;
-            paint.setStyle(Paint.Style.FILL);
-            paint.setAntiAlias(true);
-
-            canvas.drawCircle(100, 100, 10, paint);
+            canvas.drawColor(Color.parseColor("#00ffff"));
 
             question.setImageBitmap(bitmap);
             //setChoices
@@ -230,21 +215,13 @@ public class ColortoCode_practiceActivity extends AppCompatActivity {
             check_answer = 1;
         }
 
-        if (gameCount == 6) {
+        else if (gameCount == 6) {
             //setQuestionImage
             Bitmap bitmap = Bitmap.createBitmap(500, 500, Bitmap.Config.ARGB_8888);
 
             Canvas canvas;
             canvas = new Canvas(bitmap);
-            canvas.drawColor(Color.WHITE);
-
-            Paint paint;
-            paint = new Paint();
-            question.setBackgroundColor(Color.parseColor("#00ffff")) ;
-            paint.setStyle(Paint.Style.FILL);
-            paint.setAntiAlias(true);
-
-            canvas.drawCircle(100, 100, 10, paint);
+            canvas.drawColor(Color.parseColor("#00ffff"));
 
             question.setImageBitmap(bitmap);
             //setChoices
@@ -255,21 +232,13 @@ public class ColortoCode_practiceActivity extends AppCompatActivity {
             check_answer = 3;
         }
 
-        if (gameCount == 7) {
+        else if (gameCount == 7) {
             //setQuestionImage
             Bitmap bitmap = Bitmap.createBitmap(500, 500, Bitmap.Config.ARGB_8888);
 
             Canvas canvas;
             canvas = new Canvas(bitmap);
-            canvas.drawColor(Color.WHITE);
-
-            Paint paint;
-            paint = new Paint();
-            question.setBackgroundColor(Color.parseColor("#00ffff")) ;
-            paint.setStyle(Paint.Style.FILL);
-            paint.setAntiAlias(true);
-
-            canvas.drawCircle(100, 100, 10, paint);
+            canvas.drawColor(Color.parseColor("#00ffff"));
 
             question.setImageBitmap(bitmap);
             //setChoices
@@ -280,21 +249,13 @@ public class ColortoCode_practiceActivity extends AppCompatActivity {
             check_answer = 4;
         }
 
-        if (gameCount == 8) {
+        else if (gameCount == 8) {
             //setQuestionImage
             Bitmap bitmap = Bitmap.createBitmap(500, 500, Bitmap.Config.ARGB_8888);
 
             Canvas canvas;
             canvas = new Canvas(bitmap);
-            canvas.drawColor(Color.WHITE);
-
-            Paint paint;
-            paint = new Paint();
-            question.setBackgroundColor(Color.parseColor("#00ff00")) ;
-            paint.setStyle(Paint.Style.FILL);
-            paint.setAntiAlias(true);
-
-            canvas.drawCircle(100, 100, 10, paint);
+            canvas.drawColor(Color.parseColor("#00ff00"));
 
             question.setImageBitmap(bitmap);
             //setChoices
@@ -305,21 +266,13 @@ public class ColortoCode_practiceActivity extends AppCompatActivity {
             check_answer = 4;
         }
 
-        if (gameCount == 9) {
+       else  if (gameCount == 9) {
             //setQuestionImage
             Bitmap bitmap = Bitmap.createBitmap(500, 500, Bitmap.Config.ARGB_8888);
 
             Canvas canvas;
             canvas = new Canvas(bitmap);
-            canvas.drawColor(Color.WHITE);
-
-            Paint paint;
-            paint = new Paint();
-            question.setBackgroundColor(Color.parseColor("#880088")) ;
-            paint.setStyle(Paint.Style.FILL);
-            paint.setAntiAlias(true);
-
-            canvas.drawCircle(100, 100, 10, paint);
+            canvas.drawColor(Color.parseColor("#880088"));
 
             question.setImageBitmap(bitmap);
             //setChoices
@@ -329,9 +282,9 @@ public class ColortoCode_practiceActivity extends AppCompatActivity {
             answer4.setText("#880088");
 
             check_answer = 4;
-        }
+       }
 
-        if (gameCount == 10) {
+        else if (gameCount == 10) {
             red.setText("00");
             green.setText("88");
             blue.setText("88");
@@ -345,15 +298,7 @@ public class ColortoCode_practiceActivity extends AppCompatActivity {
 
             Canvas canvas;
             canvas = new Canvas(bitmap);
-            canvas.drawColor(Color.WHITE);
-
-            Paint paint;
-            paint = new Paint();
-            question.setBackgroundColor(Color.parseColor("#880088")) ;
-            paint.setStyle(Paint.Style.FILL);
-            paint.setAntiAlias(true);
-
-            canvas.drawCircle(100, 100, 10, paint);
+            canvas.drawColor(Color.parseColor("#880088"));
 
             question.setImageBitmap(bitmap);
             //setChoices
@@ -364,15 +309,16 @@ public class ColortoCode_practiceActivity extends AppCompatActivity {
 
             check_answer = 2;
         }
+
     }
+
     public void checkprogress(){
         gameCount = gameCount + 1;
         if (gameCount <= 10) {
             progress.setText("Progress:" + gameCount + "/10");
         }
         nextquestion = true;
-        if(gameCount ==10){
-
+        if(gameCount >= 10){
 
             new AlertDialog.Builder(ColortoCode_practiceActivity.this)
                     .setTitle("title")

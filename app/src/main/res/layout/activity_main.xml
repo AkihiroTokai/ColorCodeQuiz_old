@@ -119,7 +119,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/check_select2"
-            android:layout_gravity="left|top" />
+            android:layout_gravity="center" />
 
     </FrameLayout>
 
@@ -137,7 +137,8 @@
             android:id="@+id/answer3"
             android:layout_gravity="center"
             android:onClick="select3"
-            android:background="#ff0000" />
+            android:background="#ff0000"
+            android:clickable="true"/>
 
         <ImageView
             android:layout_width="wrap_content"
@@ -161,7 +162,8 @@
             android:id="@+id/answer4"
             android:layout_gravity="center"
             android:onClick="select4"
-            android:background="#0000ff" />
+            android:background="#0000ff"
+            android:clickable="true"/>
 
         <ImageView
             android:layout_width="match_parent"

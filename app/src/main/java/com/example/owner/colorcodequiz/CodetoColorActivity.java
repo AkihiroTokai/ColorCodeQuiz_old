@@ -24,10 +24,10 @@ public class CodetoColorActivity extends AppCompatActivity {
     private ImageView check_select3;
     private ImageView check_select4;
 
-    private Button answer1;
-    private Button answer2;
-    private Button answer3;
-    private Button answer4;
+    private TextView answer1;
+    private TextView answer2;
+    private TextView answer3;
+    private TextView answer4;
 
     private int gameCount;
     private int check_answer;
@@ -41,10 +41,11 @@ public class CodetoColorActivity extends AppCompatActivity {
         setContentView(R.layout.activity_codeto_color);
 
         gameCount = 1;
-        answer1 = (Button) findViewById(R.id.answer1);
-        answer2 = (Button) findViewById(R.id.answer2);
-        answer3 = (Button) findViewById(R.id.answer3);
-        answer4 = (Button) findViewById(R.id.answer4);
+        answer1 = (TextView) findViewById(R.id.answer1);
+        answer2 = (TextView) findViewById(R.id.answer2);
+        answer3 = (TextView) findViewById(R.id.answer3);
+        answer4 = (TextView) findViewById(R.id.answer4);
+        questioncode = (TextView)findViewById(R.id.questioncode);
 
         progress =(TextView)findViewById(R.id.progress);
         questioncode = (TextView) findViewById(R.id.red);
@@ -72,7 +73,7 @@ public class CodetoColorActivity extends AppCompatActivity {
                 progress.setText("Progress:" + gameCount + "/"+ NoQ);
                 nextquestion = true;
             }
-            if (gameCount == NoQ){
+            else if (gameCount == NoQ){
                 new AlertDialog.Builder(CodetoColorActivity.this)
                         .setTitle("title")
                         .setMessage("message")
