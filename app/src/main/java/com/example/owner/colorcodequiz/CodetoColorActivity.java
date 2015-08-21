@@ -94,7 +94,6 @@ public class CodetoColorActivity extends AppCompatActivity {
         }
     }
 
-
     public void select2(View view) {
         if (nextquestion == false) {
             if (check_answer == 2) {

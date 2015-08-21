@@ -61,7 +61,7 @@ public class ColortoCode_practiceActivity extends AppCompatActivity {
         check_select2 = (ImageView) findViewById(R.id.check_select2);
         check_select3 = (ImageView) findViewById(R.id.check_select3);
         check_select4 = (ImageView) findViewById(R.id.check_select4);
-        question = (ImageView)findViewById(R.id.imageView);
+        question = (ImageView) findViewById(R.id.imageView);
 
         setanswer();
 
@@ -82,7 +82,6 @@ public class ColortoCode_practiceActivity extends AppCompatActivity {
     }
 
 
-
     public void select2(View view) {
         if (nextquestion == false) {
             if (check_answer == 2) {
@@ -90,36 +89,36 @@ public class ColortoCode_practiceActivity extends AppCompatActivity {
             } else {
                 check_select2.setImageResource(R.drawable.batu);
             }
-           checkprogress();
-        }else {
+            checkprogress();
+        } else {
             setanswer();
             nextquestion = false;
         }
     }
 
     public void select3(View view) {
-        if (nextquestion == false){
+        if (nextquestion == false) {
             if (check_answer == 3) {
                 check_select3.setImageResource(R.drawable.maru);
             } else {
                 check_select3.setImageResource(R.drawable.batu);
             }
             checkprogress();
-        }else {
+        } else {
             setanswer();
             nextquestion = false;
         }
     }
 
     public void select4(View view) {
-        if (nextquestion == false)   {
+        if (nextquestion == false) {
             if (check_answer == 4) {
                 check_select4.setImageResource(R.drawable.maru);
             } else {
                 check_select4.setImageResource(R.drawable.batu);
             }
             checkprogress();
-        }else {
+        } else {
             setanswer();
             nextquestion = false;
         }
@@ -145,9 +144,7 @@ public class ColortoCode_practiceActivity extends AppCompatActivity {
             answer3.setText("#ff00ff");
             answer4.setText("#ffffff");
             check_answer = 1;
-        }
-
-        else if (gameCount == 2) {
+        } else if (gameCount == 2) {
             //setQuestionImage
             Bitmap bitmap = Bitmap.createBitmap(500, 500, Bitmap.Config.ARGB_8888);
 
@@ -162,9 +159,7 @@ public class ColortoCode_practiceActivity extends AppCompatActivity {
             answer3.setText("#ffff00");
             answer4.setText("#ff00ff");
             check_answer = 2;
-        }
-
-        else if (gameCount == 3) {
+        } else if (gameCount == 3) {
             //setQuestionImage
             Bitmap bitmap = Bitmap.createBitmap(500, 500, Bitmap.Config.ARGB_8888);
 
@@ -179,9 +174,7 @@ public class ColortoCode_practiceActivity extends AppCompatActivity {
             answer3.setText("#ffff00");
             answer4.setText("#ff00ff");
             check_answer = 2;
-        }
-
-        else if (gameCount == 4) {
+        } else if (gameCount == 4) {
             //setQuestionImage
             Bitmap bitmap = Bitmap.createBitmap(500, 500, Bitmap.Config.ARGB_8888);
 
@@ -196,9 +189,7 @@ public class ColortoCode_practiceActivity extends AppCompatActivity {
             answer3.setText("#ffff00");
             answer4.setText("#ff00ff");
             check_answer = 4;
-        }
-
-        else if (gameCount == 5) {
+        } else if (gameCount == 5) {
             //setQuestionImage
             Bitmap bitmap = Bitmap.createBitmap(500, 500, Bitmap.Config.ARGB_8888);
 
@@ -213,9 +204,7 @@ public class ColortoCode_practiceActivity extends AppCompatActivity {
             answer3.setText("#ffff88");
             answer4.setText("#ff00ff");
             check_answer = 1;
-        }
-
-        else if (gameCount == 6) {
+        } else if (gameCount == 6) {
             //setQuestionImage
             Bitmap bitmap = Bitmap.createBitmap(500, 500, Bitmap.Config.ARGB_8888);
 
@@ -230,9 +219,7 @@ public class ColortoCode_practiceActivity extends AppCompatActivity {
             answer3.setText("#00ffff");
             answer4.setText("#ff00ff");
             check_answer = 3;
-        }
-
-        else if (gameCount == 7) {
+        } else if (gameCount == 7) {
             //setQuestionImage
             Bitmap bitmap = Bitmap.createBitmap(500, 500, Bitmap.Config.ARGB_8888);
 
@@ -247,9 +234,7 @@ public class ColortoCode_practiceActivity extends AppCompatActivity {
             answer3.setText("#ffff00");
             answer4.setText("#00ffff");
             check_answer = 4;
-        }
-
-        else if (gameCount == 8) {
+        } else if (gameCount == 8) {
             //setQuestionImage
             Bitmap bitmap = Bitmap.createBitmap(500, 500, Bitmap.Config.ARGB_8888);
 
@@ -264,9 +249,7 @@ public class ColortoCode_practiceActivity extends AppCompatActivity {
             answer3.setText("#ffff88");
             answer4.setText("#00ff00");
             check_answer = 4;
-        }
-
-       else  if (gameCount == 9) {
+        } else if (gameCount == 9) {
             //setQuestionImage
             Bitmap bitmap = Bitmap.createBitmap(500, 500, Bitmap.Config.ARGB_8888);
 
@@ -282,9 +265,7 @@ public class ColortoCode_practiceActivity extends AppCompatActivity {
             answer4.setText("#880088");
 
             check_answer = 4;
-       }
-
-        else if (gameCount == 10) {
+        } else if (gameCount == 10) {
             red.setText("00");
             green.setText("88");
             blue.setText("88");
@@ -312,18 +293,18 @@ public class ColortoCode_practiceActivity extends AppCompatActivity {
 
     }
 
-    public void checkprogress(){
+public void checkprogress() {
         gameCount = gameCount + 1;
         if (gameCount <= 10) {
             progress.setText("Progress:" + gameCount + "/10");
         }
         nextquestion = true;
-        if(gameCount >= 10){
+        if (gameCount >= 10) {
 
             new AlertDialog.Builder(ColortoCode_practiceActivity.this)
                     .setTitle("title")
                     .setMessage("message")
-                    .setPositiveButton("OK", new DialogInterface.OnClickListener(){
+                    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
                             // OK button pressed
@@ -331,6 +312,7 @@ public class ColortoCode_practiceActivity extends AppCompatActivity {
                             startActivity(intent);
                         }
                     }).show();
+
         }
     }
     @Override
