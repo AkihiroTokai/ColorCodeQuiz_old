@@ -101,9 +101,9 @@ public class ColortoCode_practiceActivity extends AppCompatActivity {
             if (check_answer == 3) {
                 check_select3.setImageResource(R.drawable.maru);
             } else {
-                check_select3.setImageResource(R.drawable.batu);
-            }
-            checkprogress();
+            check_select3.setImageResource(R.drawable.batu);
+        }
+        checkprogress();
         } else {
             setanswer();
             nextquestion = false;
@@ -144,7 +144,9 @@ public class ColortoCode_practiceActivity extends AppCompatActivity {
             answer3.setText("#ff00ff");
             answer4.setText("#ffffff");
             check_answer = 1;
-        } else if (gameCount == 2) {
+        }
+
+        else if (gameCount == 2) {
             //setQuestionImage
             Bitmap bitmap = Bitmap.createBitmap(500, 500, Bitmap.Config.ARGB_8888);
 
@@ -159,7 +161,9 @@ public class ColortoCode_practiceActivity extends AppCompatActivity {
             answer3.setText("#ffff00");
             answer4.setText("#ff00ff");
             check_answer = 2;
-        } else if (gameCount == 3) {
+        }
+
+        else if (gameCount == 3) {
             //setQuestionImage
             Bitmap bitmap = Bitmap.createBitmap(500, 500, Bitmap.Config.ARGB_8888);
 
@@ -174,7 +178,9 @@ public class ColortoCode_practiceActivity extends AppCompatActivity {
             answer3.setText("#ffff00");
             answer4.setText("#ff00ff");
             check_answer = 2;
-        } else if (gameCount == 4) {
+        }
+
+        else if (gameCount == 4) {
             //setQuestionImage
             Bitmap bitmap = Bitmap.createBitmap(500, 500, Bitmap.Config.ARGB_8888);
 
@@ -189,7 +195,9 @@ public class ColortoCode_practiceActivity extends AppCompatActivity {
             answer3.setText("#ffff00");
             answer4.setText("#ff00ff");
             check_answer = 4;
-        } else if (gameCount == 5) {
+        }
+
+        else if (gameCount == 5) {
             //setQuestionImage
             Bitmap bitmap = Bitmap.createBitmap(500, 500, Bitmap.Config.ARGB_8888);
 
@@ -204,7 +212,9 @@ public class ColortoCode_practiceActivity extends AppCompatActivity {
             answer3.setText("#ffff88");
             answer4.setText("#ff00ff");
             check_answer = 1;
-        } else if (gameCount == 6) {
+        }
+
+        else if (gameCount == 6) {
             //setQuestionImage
             Bitmap bitmap = Bitmap.createBitmap(500, 500, Bitmap.Config.ARGB_8888);
 
@@ -219,7 +229,9 @@ public class ColortoCode_practiceActivity extends AppCompatActivity {
             answer3.setText("#00ffff");
             answer4.setText("#ff00ff");
             check_answer = 3;
-        } else if (gameCount == 7) {
+        }
+
+        else if (gameCount == 7) {
             //setQuestionImage
             Bitmap bitmap = Bitmap.createBitmap(500, 500, Bitmap.Config.ARGB_8888);
 
@@ -234,7 +246,9 @@ public class ColortoCode_practiceActivity extends AppCompatActivity {
             answer3.setText("#ffff00");
             answer4.setText("#00ffff");
             check_answer = 4;
-        } else if (gameCount == 8) {
+        }
+
+        else if (gameCount == 8) {
             //setQuestionImage
             Bitmap bitmap = Bitmap.createBitmap(500, 500, Bitmap.Config.ARGB_8888);
 
@@ -249,7 +263,9 @@ public class ColortoCode_practiceActivity extends AppCompatActivity {
             answer3.setText("#ffff88");
             answer4.setText("#00ff00");
             check_answer = 4;
-        } else if (gameCount == 9) {
+        }
+
+        else if (gameCount == 9) {
             //setQuestionImage
             Bitmap bitmap = Bitmap.createBitmap(500, 500, Bitmap.Config.ARGB_8888);
 
@@ -265,7 +281,9 @@ public class ColortoCode_practiceActivity extends AppCompatActivity {
             answer4.setText("#880088");
 
             check_answer = 4;
-        } else if (gameCount == 10) {
+        }
+
+        else if (gameCount == 10) {
             red.setText("00");
             green.setText("88");
             blue.setText("88");
