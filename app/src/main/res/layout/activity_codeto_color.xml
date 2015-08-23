@@ -73,7 +73,6 @@
                 android:layout_width="89dp"
                 android:layout_height="55dp"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Medium Text"
                 android:id="@+id/answer1"
                 android:layout_gravity="center"
                 android:onClick="select1"
@@ -99,7 +98,6 @@
                 android:layout_width="89dp"
                 android:layout_height="55dp"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Medium Text"
                 android:id="@+id/answer2"
                 android:layout_gravity="center"
                 android:onClick="select2"
@@ -130,12 +128,12 @@
                 android:layout_width="89dp"
                 android:layout_height="55dp"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Medium Text"
                 android:id="@+id/answer3"
                 android:layout_gravity="center"
                 android:onClick="select3"
                 android:clickable="true"
-                android:gravity="center_horizontal" />
+                android:gravity="center_horizontal"
+                android:singleLine="false" />
 
         </FrameLayout>
 
@@ -156,7 +154,6 @@
                 android:layout_width="89dp"
                 android:layout_height="55dp"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Medium Text"
                 android:id="@+id/answer4"
                 android:layout_gravity="center"
                 android:onClick="select4"

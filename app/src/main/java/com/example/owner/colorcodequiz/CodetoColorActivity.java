@@ -48,7 +48,6 @@ public class CodetoColorActivity extends AppCompatActivity {
         questioncode = (TextView)findViewById(R.id.questioncode);
 
         progress =(TextView)findViewById(R.id.progress);
-        questioncode = (TextView) findViewById(R.id.red);
 
         check_select1 = (ImageView)findViewById(R.id.check_select1);
         check_select2 = (ImageView)findViewById(R.id.check_select2);
