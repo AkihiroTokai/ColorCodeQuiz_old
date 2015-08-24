@@ -111,7 +111,8 @@
             android:text="New Button"
             android:id="@+id/answer3"
             android:layout_gravity="center"
-            android:clickable="true"/>
+            android:clickable="true"
+            android:onClick="select3" />
 
     </FrameLayout>
 
@@ -134,7 +135,8 @@
             android:text="New Button"
             android:id="@+id/answer4"
             android:layout_gravity="center"
-            android:clickable="true"/>
+            android:clickable="true"
+            android:onClick="select4" />
 
     </FrameLayout>
 
