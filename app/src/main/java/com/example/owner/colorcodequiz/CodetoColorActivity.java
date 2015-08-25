@@ -189,7 +189,7 @@ public class CodetoColorActivity extends AppCompatActivity {
 
              }
         }else {
-            setanswer();
+
             nextquestion = false;
             check_select4.setImageDrawable(null);
         }
