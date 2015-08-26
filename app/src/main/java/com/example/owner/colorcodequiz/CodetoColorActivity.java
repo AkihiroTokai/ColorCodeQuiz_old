@@ -68,11 +68,11 @@ public class CodetoColorActivity extends AppCompatActivity {
                 check_select1.setImageResource(R.drawable.batu);
             }
             gameCount = gameCount + 1;
-            if (gameCount < NoQ) {
+            if (gameCount <= NoQ) {
                 progress.setText("Progress:" + gameCount + "/"+ NoQ);
                 nextquestion = true;
             }
-            else if (gameCount == NoQ){
+            if (gameCount > NoQ){
                 new AlertDialog.Builder(CodetoColorActivity.this)
                         .setTitle("title")
                         .setMessage("message")
@@ -104,11 +104,11 @@ public class CodetoColorActivity extends AppCompatActivity {
                 check_select2.setImageResource(R.drawable.batu);
             }
             gameCount = gameCount + 1;
-            if (gameCount < NoQ) {
+            if (gameCount <= NoQ) {
                 progress.setText("Progress:" + gameCount + "/"+NoQ);
                 nextquestion = true;
             }
-            if (gameCount == NoQ){
+            if (gameCount > NoQ){
                 new AlertDialog.Builder(CodetoColorActivity.this)
                         .setTitle("title")
                         .setMessage("message")
@@ -137,11 +137,11 @@ public class CodetoColorActivity extends AppCompatActivity {
                 check_select3.setImageResource(R.drawable.batu);
             }
             gameCount = gameCount + 1;
-            if (gameCount < NoQ) {
+            if (gameCount <= NoQ) {
                 progress.setText("Progress:" + gameCount + "/"+NoQ);
             }
             nextquestion = true;
-            if (gameCount ==  NoQ){
+            if (gameCount >  NoQ){
                 new AlertDialog.Builder(CodetoColorActivity.this)
                         .setTitle("title")
                         .setMessage("message")
@@ -170,26 +170,25 @@ public class CodetoColorActivity extends AppCompatActivity {
                 check_select4.setImageResource(R.drawable.batu);
             }
             gameCount = gameCount + 1;
-            if (gameCount < NoQ) {
+            if (gameCount <= NoQ) {
                 progress.setText("Progress:" + gameCount + "/"+ NoQ);
                 nextquestion = true;
             }
-             if (gameCount == NoQ){
-                 new AlertDialog.Builder(CodetoColorActivity.this)
-                         .setTitle("title")
-                         .setMessage("message")
-                         .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                             @Override
-                             public void onClick(DialogInterface dialog, int which) {
-                                 // OK button pressed
-                                 Intent intent = new Intent(CodetoColorActivity.this, MenuActivity.class);
-                                 startActivity(intent);
-                             }
-                         }).show();
+            if (gameCount >  NoQ){
+                new AlertDialog.Builder(CodetoColorActivity.this)
+                        .setTitle("title")
+                        .setMessage("message")
+                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                // OK button pressed
+                                Intent intent = new Intent(CodetoColorActivity.this, MenuActivity.class);
+                                startActivity(intent);
+                            }
+                        }).show();
 
-             }
+            }
         }else {
-
             nextquestion = false;
             check_select4.setImageDrawable(null);
         }
