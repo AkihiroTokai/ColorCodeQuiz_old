@@ -33,7 +33,8 @@ public class ColortoCodeActivity extends AppCompatActivity {
 
     private int gameCount;
     private int check_answer;
-    private int NoQ;
+    private int noq;
+    private int noca;
 
     private boolean nextquestion;
 
@@ -42,6 +43,8 @@ public class ColortoCodeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_colorto_code);
         gameCount = 1;
+        noca = 0 ;
+
         answer1 = (TextView) findViewById(R.id.answer1);
         answer2 = (TextView) findViewById(R.id.answer2);
         answer3 = (TextView) findViewById(R.id.answer3);
@@ -56,22 +59,23 @@ public class ColortoCodeActivity extends AppCompatActivity {
         question = (ImageView)findViewById(R.id.imageView);
 
         Intent intent = getIntent();
-        NoQ  = intent.getIntExtra("getnumber",0);
+        noq  = intent.getIntExtra("getnumber",0);
         setanswer();
     }
     public void select1(View view) {
         if (!nextquestion)   {
             if (check_answer == 1) {
                 check_select1.setImageResource(R.drawable.maru);
+                noca = noca+1;
             } else {
                 check_select1.setImageResource(R.drawable.batu);
             }
             gameCount = gameCount + 1;
-            if (gameCount <= NoQ) {
-                progress.setText("Progress:" + gameCount + "/"+NoQ);
+            if (gameCount <= noq) {
+                progress.setText("Progress:" + gameCount + "/"+noq);
                 nextquestion = true;
             }
-            if (gameCount == NoQ){
+            if (gameCount == noq){
               //IntenttoMenu
             }
             }else {
@@ -85,12 +89,13 @@ public class ColortoCodeActivity extends AppCompatActivity {
         if (!nextquestion)   {
             if (check_answer == 2) {
                 check_select2.setImageResource(R.drawable.maru);
+                noca = noca+1;
             } else {
                 check_select2.setImageResource(R.drawable.batu);
             }
             gameCount = gameCount + 1;
-            if (gameCount <= NoQ) {
-                progress.setText("Progress:" + gameCount + "/"+NoQ);
+            if (gameCount <= noq) {
+                progress.setText("Progress:" + gameCount + "/"+noq);
             }
             nextquestion = true;
         }else {
@@ -101,15 +106,16 @@ public class ColortoCodeActivity extends AppCompatActivity {
     }
 
     public void select3(View view) {
-        if (nextquestion == false) {
+        if (!nextquestion) {
             if (check_answer == 3) {
                 check_select3.setImageResource(R.drawable.maru);
+                noca = noca+1;
             } else {
                 check_select3.setImageResource(R.drawable.batu);
             }
             gameCount = gameCount + 1;
-            if (gameCount <= NoQ) {
-            progress.setText("Progress:" + gameCount + "/" + NoQ);
+            if (gameCount <= noq) {
+            progress.setText("Progress:" + gameCount + "/" + noq);
             }
             nextquestion = true;
         }else {
@@ -120,15 +126,15 @@ public class ColortoCodeActivity extends AppCompatActivity {
     }
 
     public void select4(View view) {
-        if (nextquestion == false)   {
+        if (!nextquestion )   {
             if (check_answer == 4) {
                 check_select4.setImageResource(R.drawable.maru);
             } else {
                 check_select4.setImageResource(R.drawable.batu);
             }
             gameCount = gameCount + 1;
-            if (gameCount <= NoQ) {
-                progress.setText("Progress:" + gameCount + "/"+NoQ);
+            if (gameCount <=noq) {
+                progress.setText("Progress:" + gameCount + "/"+noq);
             }
             nextquestion = true;
         }else {
