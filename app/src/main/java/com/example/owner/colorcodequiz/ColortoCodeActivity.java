@@ -116,8 +116,8 @@ public class ColortoCodeActivity extends AppCompatActivity {
             gameCount = gameCount + 1;
             if (gameCount <= noq) {
             progress.setText("Progress:" + gameCount + "/" + noq);
-            }
             nextquestion = true;
+            }
         }else {
             setanswer();
             nextquestion = false;
@@ -138,6 +138,7 @@ public class ColortoCodeActivity extends AppCompatActivity {
             }
             nextquestion = true;
         }else {
+            setanswer();
             nextquestion = false;
             check_select4.setImageDrawable(null);
         }
