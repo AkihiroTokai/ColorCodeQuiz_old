@@ -1,4 +1,5 @@
 
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -8,12 +9,11 @@
     android:id="@+id/RelativeLayout"
     android:focusable="true">
 
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Mode:Practice"
+        android:text="Mode:ColortoCode"
         android:id="@+id/mode"
         android:layout_marginLeft="34dp"
         android:layout_marginStart="53dp"
@@ -31,55 +31,58 @@
         android:layout_alignTop="@+id/mode"
         android:layout_toEndOf="@+id/mode" />
 
+
     <ImageView
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:id="@+id/imageView"
-        android:layout_marginTop="65dp"
+        android:layout_marginTop="34dp"
         android:layout_below="@+id/mode"
-        android:layout_toEndOf="@+id/mode" />
+        android:layout_centerHorizontal="true" />
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="100dp"
         android:layout_below="@+id/imageView"
-        android:layout_alignStart="@+id/mode"
-        android:layout_marginTop="99dp"
-        android:layout_toStartOf="@+id/frameLayout9"
-        android:id="@+id/frameLayout7">
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="86dp"
+        android:layout_alignEnd="@+id/mode"
+        android:id="@+id/frameLayout2">
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/check_select1"
-            android:layout_gravity="center" />
+            android:id="@+id/check_select1" />
 
         <TextView
             android:layout_width="89dp"
             android:layout_height="55dp"
-            android:text="New Buttonk"
+            android:text="New Button"
             android:id="@+id/answer1"
             android:layout_gravity="center"
             android:onClick="select1"
-            android:gravity="center"
-            android:clickable="true"/>
-
+            android:layout_above="@+id/frameLayout4"
+            android:layout_alignStart="@+id/imageView"
+            android:clickable="true"
+            android:gravity="center" />
 
     </FrameLayout>
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/frameLayout8"
-        android:layout_alignStart="@+id/progress"
-        android:id="@+id/frameLayout9"
-        android:layout_alignTop="@+id/frameLayout7">
+        android:layout_alignTop="@+id/frameLayout2"
+        android:layout_alignEnd="@+id/progress"
+        android:layout_alignBottom="@+id/frameLayout2"
+        android:layout_toEndOf="@+id/frameLayout2"
+        android:id="@+id/frameLayout4">
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/check_select2"
-            android:layout_gravity="left|top" />
+            android:focusableInTouchMode="false"
+            android:layout_gravity="right|bottom" />
 
         <TextView
             android:layout_width="89dp"
@@ -88,23 +91,22 @@
             android:id="@+id/answer2"
             android:layout_gravity="center"
             android:onClick="select2"
-            android:gravity="center"
-            android:clickable="true"/>
+            android:clickable="true"
+            android:gravity="center" />
+
     </FrameLayout>
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/frameLayout7"
-        android:layout_alignStart="@+id/frameLayout7"
-        android:id="@+id/frameLayout8"
-        android:layout_toStartOf="@+id/frameLayout9">
+        android:layout_below="@+id/frameLayout2"
+        android:layout_toStartOf="@+id/frameLayout4"
+        android:id="@+id/frameLayout5">
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/check_select3"
-            android:layout_gravity="left|top" />
+            android:id="@+id/check_select3" />
 
         <TextView
             android:layout_width="89dp"
@@ -112,22 +114,24 @@
             android:text="New Button"
             android:id="@+id/answer3"
             android:layout_gravity="center"
+            android:clickable="true"
             android:onClick="select3"
-            android:gravity="center"
-            android:clickable="true"/>
+            android:gravity="center" />
+
     </FrameLayout>
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/frameLayout9"
-        android:layout_toEndOf="@+id/frameLayout7">
+        android:layout_below="@+id/frameLayout4"
+        android:layout_alignEnd="@+id/progress"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/frameLayout4">
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/check_select4"
-            android:layout_gravity="left|top" />
+            android:id="@+id/check_select4" />
 
         <TextView
             android:layout_width="89dp"
@@ -135,9 +139,10 @@
             android:text="New Button"
             android:id="@+id/answer4"
             android:layout_gravity="center"
+            android:clickable="true"
             android:onClick="select4"
-            android:gravity="center"
-            android:clickable="true"/>
+            android:gravity="center" />
+
     </FrameLayout>
 
 

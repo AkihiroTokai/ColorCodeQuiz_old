@@ -68,17 +68,17 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Mode:"
             android:id="@+id/Mode"
-            android:layout_alignBottom="@+id/Randommode"
+            android:layout_alignBottom="@+id/Random"
             android:layout_alignStart="@+id/Start"
-            android:layout_alignTop="@+id/Randommode"
+            android:layout_alignTop="@+id/Random"
             android:layout_toStartOf="@+id/ColortoCode"
             android:gravity="center" />
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Randommode"
-            android:id="@+id/Randommode"
+            android:text="Random"
+            android:id="@+id/Random"
             android:layout_above="@+id/ColortoCode"
             android:layout_centerHorizontal="true"
             android:checked="true"
@@ -100,7 +100,7 @@
             android:id="@+id/Start"
             android:gravity="center_vertical"
             android:layout_alignParentStart="true"
-            android:layout_toStartOf="@+id/Randommode"
+            android:layout_toStartOf="@+id/Random"
             android:layout_alignTop="@+id/ColortoCode"
             android:layout_alignBottom="@+id/ColortoCode"
             android:layout_gravity="center_vertical"
@@ -212,7 +212,7 @@
             android:text="Comming Soon !"
             android:id="@+id/CommingSoon"
             android:layout_alignParentBottom="true"
-            android:layout_alignStart="@+id/Randommode"
+            android:layout_alignStart="@+id/Random"
             android:layout_gravity="center_horizontal" />
     </LinearLayout>
 

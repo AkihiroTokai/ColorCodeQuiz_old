@@ -31,7 +31,8 @@ public class CodetoColorActivity extends AppCompatActivity {
 
     private int gameCount;
     private int check_answer;
-    private int NoQ;
+    private int noq;
+    private int noca;
 
     private boolean nextquestion;
 
@@ -55,27 +56,28 @@ public class CodetoColorActivity extends AppCompatActivity {
         check_select4 = (ImageView)findViewById(R.id.check_select4);
 
         Intent intent = getIntent();
-        NoQ  = intent.getIntExtra("getnumber",0);
+        noq  = intent.getIntExtra("getnumber",0);
         nextquestion = false ;
+        progress.setText("Progress:" + gameCount + "/"+ noq);
         setanswer();
     }
 
     public void select1(View view) {
-        if (nextquestion == false)   {
+        if (!nextquestion)   {
             if (check_answer == 1) {
                 check_select1.setImageResource(R.drawable.maru);
             } else {
                 check_select1.setImageResource(R.drawable.batu);
+                noca = noca+1;
             }
-            gameCount = gameCount + 1;
-            if (gameCount <= NoQ) {
-                progress.setText("Progress:" + gameCount + "/"+ NoQ);
+            if (gameCount <= noq) {
+                gameCount = gameCount + 1;
+                progress.setText("Progress:" + gameCount + "/"+ noq);
                 nextquestion = true;
-            }
-            if (gameCount > NoQ){
+            }else{
                 new AlertDialog.Builder(CodetoColorActivity.this)
-                        .setTitle("title")
-                        .setMessage("message")
+                        .setTitle("Menuに戻ります。")
+                        .setMessage(noq+"問中"+noca+"問正解しました。")
                         .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
@@ -84,17 +86,15 @@ public class CodetoColorActivity extends AppCompatActivity {
                                 startActivity(intent);
                             }
                         }).show();
-
             }
         }else {
-                setanswer();
-                nextquestion = false;
-                check_select1.setImageDrawable(null);
+            setanswer();
+            nextquestion = false;
         }
     }
 
     public void select2(View view) {
-        if (nextquestion == false) {
+        if (!nextquestion) {
             if (check_answer == 2) {
                 check_select1.setImageDrawable(null);
                 check_select2.setImageResource(R.drawable.maru);
@@ -104,14 +104,13 @@ public class CodetoColorActivity extends AppCompatActivity {
                 check_select2.setImageResource(R.drawable.batu);
             }
             gameCount = gameCount + 1;
-            if (gameCount <= NoQ) {
-                progress.setText("Progress:" + gameCount + "/"+NoQ);
+            if (gameCount <= noq) {
+                progress.setText("Progress:" + gameCount + "/"+noq);
                 nextquestion = true;
-            }
-            if (gameCount > NoQ){
+            } else {
                 new AlertDialog.Builder(CodetoColorActivity.this)
-                        .setTitle("title")
-                        .setMessage("message")
+                        .setTitle("Menuに戻ります。")
+                        .setMessage(noq+"問中"+noca+"問正解しました。")
                         .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
@@ -120,31 +119,28 @@ public class CodetoColorActivity extends AppCompatActivity {
                                 startActivity(intent);
                             }
                         }).show();
-
             }
         }else {
             setanswer();
             nextquestion = false;
-            check_select2.setImageDrawable(null);
         }
     }
 
     public void select3(View view) {
-        if (nextquestion == false){
+        if (!nextquestion){
             if (check_answer == 3) {
                 check_select3.setImageResource(R.drawable.maru);
             } else {
                 check_select3.setImageResource(R.drawable.batu);
             }
             gameCount = gameCount + 1;
-            if (gameCount <= NoQ) {
-                progress.setText("Progress:" + gameCount + "/"+NoQ);
-            }
             nextquestion = true;
-            if (gameCount >  NoQ){
+            if (gameCount <= noq) {
+                progress.setText("Progress:" + gameCount + "/"+noq);
+            }else {
                 new AlertDialog.Builder(CodetoColorActivity.this)
-                        .setTitle("title")
-                        .setMessage("message")
+                        .setTitle("Menuに戻ります。")
+                        .setMessage(noq+"問中"+noca+"問正解しました。")
                         .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
@@ -158,26 +154,24 @@ public class CodetoColorActivity extends AppCompatActivity {
         }else {
             setanswer();
             nextquestion = false;
-            check_select3.setImageDrawable(null);
         }
     }
 
     public void select4(View view) {
-        if (nextquestion == false)   {
+        if (!nextquestion)   {
             if (check_answer == 4) {
                 check_select4.setImageResource(R.drawable.maru);
             } else {
                 check_select4.setImageResource(R.drawable.batu);
             }
             gameCount = gameCount + 1;
-            if (gameCount <= NoQ) {
-                progress.setText("Progress:" + gameCount + "/"+ NoQ);
+            if (gameCount <= noq) {
+                progress.setText("Progress:" + gameCount + "/"+ noq);
                 nextquestion = true;
-            }
-            if (gameCount >  NoQ){
+            }else{
                 new AlertDialog.Builder(CodetoColorActivity.this)
-                        .setTitle("title")
-                        .setMessage("message")
+                        .setTitle("Menuに戻ります。")
+                        .setMessage(noq+"問中"+noca+"問正解しました。")
                         .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
@@ -189,8 +183,8 @@ public class CodetoColorActivity extends AppCompatActivity {
 
             }
         }else {
+            setanswer();
             nextquestion = false;
-            check_select4.setImageDrawable(null);
         }
     }
 
@@ -216,7 +210,7 @@ public class CodetoColorActivity extends AppCompatActivity {
 
 
         //createChoicesColorcode
-        int limit = 20;
+        int minlimit = 20;
         while (true) {
 
             Random rnd5 = new Random();
@@ -230,7 +224,7 @@ public class CodetoColorActivity extends AppCompatActivity {
             int abs_r2_3 = Math.abs(r_a2 - r_a3);
             int abs_r3_1 = Math.abs(r_a3 - r_a1);
 
-            if ((abs_r1_2 >= limit) && (abs_r2_3 >= limit) && (abs_r3_1 >= limit)) {
+            if ((abs_r1_2 >= minlimit) && (abs_r2_3 >= minlimit) && (abs_r3_1 >= minlimit)) {
                 break;
             }
         }
@@ -248,7 +242,7 @@ public class CodetoColorActivity extends AppCompatActivity {
             int abs_g2_3 = Math.abs(g_a2 - g_a3);
             int abs_g3_1 = Math.abs(g_a3 - g_a1);
 
-            if ((abs_g1_2 >= limit) && (abs_g2_3 >= limit) && (abs_g3_1 >= limit)) {
+            if ((abs_g1_2 >= minlimit) && (abs_g2_3 >= minlimit) && (abs_g3_1 >= minlimit)) {
                 break;
             }
 
@@ -267,10 +261,15 @@ public class CodetoColorActivity extends AppCompatActivity {
             int abs_b2_3 = Math.abs(b_a2 - b_a3);
             int abs_b3_1 = Math.abs(b_a3 - b_a1);
 
-            if ((abs_b1_2 >= limit) && (abs_b2_3 >= limit) && (abs_b3_1 >= limit)) {
+            if ((abs_b1_2 >= minlimit) && (abs_b2_3 >= minlimit) && (abs_b3_1 >= minlimit)) {
                 break;
             }
         }
+        //cleanCheckselect
+        check_select1.setImageDrawable(null);
+        check_select2.setImageDrawable(null);
+        check_select3.setImageDrawable(null);
+        check_select4.setImageDrawable(null);
         // setanswer
         switch (check_answer) {
             case 1:

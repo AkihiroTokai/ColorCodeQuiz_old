@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView answer4;
     private int gameCount;
     private int check_answer;
+    private int noca;
     private boolean nextquestion;
 
 
@@ -73,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
         if (nextquestion == false) {
             if (check_answer == 1) {
                 check_select1.setImageResource(R.drawable.maru);
+                noca = noca+1;
             } else {
                 check_select1.setImageResource(R.drawable.batu);
             }
@@ -80,7 +82,6 @@ public class MainActivity extends AppCompatActivity {
         }else {
             setanswer();
             nextquestion = false;
-            check_select1.setImageDrawable(null);
         }
     }
 
@@ -90,6 +91,7 @@ public class MainActivity extends AppCompatActivity {
         if (nextquestion == false) {
             if (check_answer == 2) {
                 check_select2.setImageResource(R.drawable.maru);
+                noca = noca +1;
             } else {
                 check_select2.setImageResource(R.drawable.batu);
             }
@@ -97,7 +99,6 @@ public class MainActivity extends AppCompatActivity {
         }else {
             setanswer();
             nextquestion = false;
-            check_select2.setImageDrawable(null);
         }
     }
 
@@ -105,6 +106,7 @@ public class MainActivity extends AppCompatActivity {
         if (nextquestion == false){
             if (check_answer == 3) {
                 check_select3.setImageResource(R.drawable.maru);
+                noca = noca +1;
             } else {
                 check_select3.setImageResource(R.drawable.batu);
             }
@@ -112,7 +114,6 @@ public class MainActivity extends AppCompatActivity {
         }else {
             setanswer();
             nextquestion = false;
-            check_select3.setImageDrawable(null);
         }
     }
 
@@ -120,6 +121,7 @@ public class MainActivity extends AppCompatActivity {
         if (nextquestion == false)   {
             if (check_answer == 1) {
                 check_select4.setImageResource(R.drawable.maru);
+                noca = noca +1;
             } else {
                 check_select4.setImageResource(R.drawable.batu);
             }
@@ -137,10 +139,10 @@ public class MainActivity extends AppCompatActivity {
             progress.setText("Progress:" + gameCount + "/10");
         }
         nextquestion = true;
-        if(gameCount ==10){
+        if(gameCount >= 10){
             new AlertDialog.Builder(MainActivity.this)
-                    .setTitle("title")
-                    .setMessage("message")
+                    .setTitle("Menuに戻ります。")
+                    .setMessage("10問中"+noca+"問正解しました。")
                     .setPositiveButton("OK", new DialogInterface.OnClickListener(){
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
@@ -153,7 +155,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setanswer() {
-         if (gameCount == 2) {
+        //cleanCheckselect
+        check_select1.setImageDrawable(null);
+        check_select2.setImageDrawable(null);
+        check_select3.setImageDrawable(null);
+        check_select4.setImageDrawable(null);
+
+        if (gameCount == 2) {
             red.setText("ff");
             green.setText("ff");
             blue.setText("ff");

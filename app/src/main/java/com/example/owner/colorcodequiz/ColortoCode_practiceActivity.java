@@ -38,6 +38,7 @@ public class ColortoCode_practiceActivity extends AppCompatActivity {
 
     private int gameCount;
     private int check_answer;
+    private int noca;
 
     private boolean nextquestion;
 
@@ -71,6 +72,7 @@ public class ColortoCode_practiceActivity extends AppCompatActivity {
         if (nextquestion == false) {
             if (check_answer == 1) {
                 check_select1.setImageResource(R.drawable.maru);
+                noca = noca+1;
             } else {
                 check_select1.setImageResource(R.drawable.batu);
             }
@@ -86,6 +88,7 @@ public class ColortoCode_practiceActivity extends AppCompatActivity {
         if (nextquestion == false) {
             if (check_answer == 2) {
                 check_select2.setImageResource(R.drawable.maru);
+                noca = noca+1;
             } else {
                 check_select2.setImageResource(R.drawable.batu);
             }
@@ -100,6 +103,7 @@ public class ColortoCode_practiceActivity extends AppCompatActivity {
         if (nextquestion == false) {
             if (check_answer == 3) {
                 check_select3.setImageResource(R.drawable.maru);
+                noca = noca+1;
             } else {
             check_select3.setImageResource(R.drawable.batu);
         }
@@ -114,6 +118,7 @@ public class ColortoCode_practiceActivity extends AppCompatActivity {
         if (nextquestion == false) {
             if (check_answer == 4) {
                 check_select4.setImageResource(R.drawable.maru);
+                noca = noca+1;
             } else {
                 check_select4.setImageResource(R.drawable.batu);
             }
@@ -318,10 +323,9 @@ public void checkprogress() {
         }
         nextquestion = true;
         if (gameCount >= 10) {
-
             new AlertDialog.Builder(ColortoCode_practiceActivity.this)
-                    .setTitle("title")
-                    .setMessage("message")
+                    .setTitle("Menuに戻ります。")
+                    .setMessage("10問中"+noca+"問正解しました。")
                     .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
@@ -330,9 +334,9 @@ public void checkprogress() {
                             startActivity(intent);
                         }
                     }).show();
-
         }
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

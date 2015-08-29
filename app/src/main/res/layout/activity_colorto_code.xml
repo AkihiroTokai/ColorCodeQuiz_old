@@ -55,14 +55,15 @@
 
         <TextView
             android:layout_width="89dp"
-            android:layout_height="wrap_content"
+            android:layout_height="55dp"
             android:text="New Button"
             android:id="@+id/answer1"
             android:layout_gravity="center"
             android:onClick="select1"
             android:layout_above="@+id/frameLayout4"
             android:layout_alignStart="@+id/imageView"
-            android:clickable="true"/>
+            android:clickable="true"
+            android:gravity="center" />
 
     </FrameLayout>
 
@@ -84,12 +85,13 @@
 
         <TextView
             android:layout_width="89dp"
-            android:layout_height="wrap_content"
+            android:layout_height="55dp"
             android:text="New Button"
             android:id="@+id/answer2"
             android:layout_gravity="center"
             android:onClick="select2"
-            android:clickable="true"/>
+            android:clickable="true"
+            android:gravity="center" />
 
     </FrameLayout>
 
@@ -106,13 +108,14 @@
             android:id="@+id/check_select3" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="89dp"
+            android:layout_height="55dp"
             android:text="New Button"
             android:id="@+id/answer3"
             android:layout_gravity="center"
             android:clickable="true"
-            android:onClick="select3" />
+            android:onClick="select3"
+            android:gravity="center" />
 
     </FrameLayout>
 
@@ -130,13 +133,14 @@
             android:id="@+id/check_select4" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="89dp"
+            android:layout_height="55dp"
             android:text="New Button"
             android:id="@+id/answer4"
             android:layout_gravity="center"
             android:clickable="true"
-            android:onClick="select4" />
+            android:onClick="select4"
+            android:gravity="center" />
 
     </FrameLayout>
 

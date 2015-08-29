@@ -1,6 +1,8 @@
 package com.example.owner.colorcodequiz;
 
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -66,24 +68,32 @@ public class ColortoCodeActivity extends AppCompatActivity {
         if (!nextquestion)   {
             if (check_answer == 1) {
                 check_select1.setImageResource(R.drawable.maru);
-                noca = noca+1;
             } else {
                 check_select1.setImageResource(R.drawable.batu);
+                noca = noca+1;
             }
-            gameCount = gameCount + 1;
             if (gameCount <= noq) {
-                progress.setText("Progress:" + gameCount + "/"+noq);
+                gameCount = gameCount + 1;
+                progress.setText("Progress:" + gameCount + "/"+ noq);
                 nextquestion = true;
+            }else{
+                new AlertDialog.Builder(ColortoCodeActivity.this)
+                        .setTitle("Menuに戻ります。")
+                        .setMessage(noq+"問中"+noca+"問正解しました。")
+                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                // OK button pressed
+                                Intent intent = new Intent(ColortoCodeActivity.this, MenuActivity.class);
+                                startActivity(intent);
+                            }
+                        }).show();
             }
-            if (gameCount == noq){
-              //IntenttoMenu
-            }
-            }else {
-                setanswer();
-                nextquestion = false;
-                check_select1.setImageDrawable(null);
-            }
+        }else {
+            setanswer();
+            nextquestion = false;
         }
+    }
 
     public void select2(View view) {
         if (!nextquestion)   {
@@ -95,13 +105,25 @@ public class ColortoCodeActivity extends AppCompatActivity {
             }
             gameCount = gameCount + 1;
             if (gameCount <= noq) {
-                progress.setText("Progress:" + gameCount + "/"+noq);
+                gameCount = gameCount + 1;
+                progress.setText("Progress:" + gameCount + "/"+ noq);
+                nextquestion = true;
+            }else{
+                new AlertDialog.Builder(ColortoCodeActivity.this)
+                        .setTitle("Menuに戻ります。")
+                        .setMessage(noq+"問中"+noca+"問正解しました。")
+                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                // OK button pressed
+                                Intent intent = new Intent(ColortoCodeActivity.this, MenuActivity.class);
+                                startActivity(intent);
+                            }
+                        }).show();
             }
-            nextquestion = true;
         }else {
             setanswer();
             nextquestion = false;
-            check_select2.setImageDrawable(null);
         }
     }
 
@@ -115,13 +137,25 @@ public class ColortoCodeActivity extends AppCompatActivity {
             }
             gameCount = gameCount + 1;
             if (gameCount <= noq) {
-            progress.setText("Progress:" + gameCount + "/" + noq);
-            nextquestion = true;
+                gameCount = gameCount + 1;
+                progress.setText("Progress:" + gameCount + "/"+ noq);
+                nextquestion = true;
+            }else{
+                new AlertDialog.Builder(ColortoCodeActivity.this)
+                        .setTitle("Menuに戻ります。")
+                        .setMessage(noq+"問中"+noca+"問正解しました。")
+                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                // OK button pressed
+                                Intent intent = new Intent(ColortoCodeActivity.this, MenuActivity.class);
+                                startActivity(intent);
+                            }
+                        }).show();
             }
         }else {
             setanswer();
             nextquestion = false;
-            check_select3.setImageDrawable(null);
         }
     }
 
@@ -133,14 +167,27 @@ public class ColortoCodeActivity extends AppCompatActivity {
                 check_select4.setImageResource(R.drawable.batu);
             }
             gameCount = gameCount + 1;
-            if (gameCount <=noq) {
-                progress.setText("Progress:" + gameCount + "/"+noq);
+            if (gameCount <= noq) {
+                gameCount = gameCount + 1;
+                progress.setText("Progress:" + gameCount + "/"+ noq);
+                nextquestion = true;
+            }else{
+                new AlertDialog.Builder(ColortoCodeActivity.this)
+                        .setTitle("Menuに戻ります。")
+                        .setMessage(noq+"問中"+noca+"問正解しました。")
+                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                // OK button pressed
+                                Intent intent = new Intent(ColortoCodeActivity.this, MenuActivity.class);
+                                startActivity(intent);
+                            }
+                        }).show();
             }
             nextquestion = true;
         }else {
             setanswer();
             nextquestion = false;
-            check_select4.setImageDrawable(null);
         }
 
     }
@@ -211,6 +258,13 @@ public class ColortoCodeActivity extends AppCompatActivity {
                  break;
              }
          }
+
+         //cleanCheckselect
+         check_select1.setImageDrawable(null);
+         check_select2.setImageDrawable(null);
+         check_select3.setImageDrawable(null);
+         check_select4.setImageDrawable(null);
+
          // setanswer
          Random rnd4 = new Random();
          check_answer = rnd4.nextInt(3) + 1;
