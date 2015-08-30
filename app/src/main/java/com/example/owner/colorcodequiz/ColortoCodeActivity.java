@@ -10,9 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.Random;
@@ -58,7 +56,7 @@ public class ColortoCodeActivity extends AppCompatActivity {
         check_select2 = (ImageView)findViewById(R.id.check_select2);
         check_select3 = (ImageView)findViewById(R.id.check_select3);
         check_select4 = (ImageView)findViewById(R.id.check_select4);
-        question = (ImageView)findViewById(R.id.imageView);
+        question = (ImageView)findViewById(R.id.questioncode);
 
         Intent intent = getIntent();
         noq  = intent.getIntExtra("getnumber",0);

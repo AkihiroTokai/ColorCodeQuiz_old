@@ -74,7 +74,7 @@ public class CodetoColorActivity extends AppCompatActivity {
                 gameCount = gameCount + 1;
                 progress.setText("Progress:" + gameCount + "/"+ noq);
                 nextquestion = true;
-            }else{
+            }if(gameCount >= noq){
                 new AlertDialog.Builder(CodetoColorActivity.this)
                         .setTitle("Menuに戻ります。")
                         .setMessage(noq+"問中"+noca+"問正解しました。")
@@ -107,7 +107,8 @@ public class CodetoColorActivity extends AppCompatActivity {
             if (gameCount <= noq) {
                 progress.setText("Progress:" + gameCount + "/"+noq);
                 nextquestion = true;
-            } else {
+            }
+            if(gameCount>= noq){
                 new AlertDialog.Builder(CodetoColorActivity.this)
                         .setTitle("Menuに戻ります。")
                         .setMessage(noq+"問中"+noca+"問正解しました。")
@@ -137,7 +138,8 @@ public class CodetoColorActivity extends AppCompatActivity {
             nextquestion = true;
             if (gameCount <= noq) {
                 progress.setText("Progress:" + gameCount + "/"+noq);
-            }else {
+            }
+            if(gameCount >= noq) {
                 new AlertDialog.Builder(CodetoColorActivity.this)
                         .setTitle("Menuに戻ります。")
                         .setMessage(noq+"問中"+noca+"問正解しました。")
@@ -168,7 +170,7 @@ public class CodetoColorActivity extends AppCompatActivity {
             if (gameCount <= noq) {
                 progress.setText("Progress:" + gameCount + "/"+ noq);
                 nextquestion = true;
-            }else{
+            }if (gameCount>= noq){
                 new AlertDialog.Builder(CodetoColorActivity.this)
                         .setTitle("Menuに戻ります。")
                         .setMessage(noq+"問中"+noca+"問正解しました。")
@@ -180,7 +182,6 @@ public class CodetoColorActivity extends AppCompatActivity {
                                 startActivity(intent);
                             }
                         }).show();
-
             }
         }else {
             setanswer();

@@ -6,16 +6,12 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
-import android.graphics.Paint;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class ColortoCode_practiceActivity extends AppCompatActivity {
@@ -62,7 +58,7 @@ public class ColortoCode_practiceActivity extends AppCompatActivity {
         check_select2 = (ImageView) findViewById(R.id.check_select2);
         check_select3 = (ImageView) findViewById(R.id.check_select3);
         check_select4 = (ImageView) findViewById(R.id.check_select4);
-        question = (ImageView) findViewById(R.id.imageView);
+        question = (ImageView) findViewById(R.id.questioncode);
 
         setanswer();
 
