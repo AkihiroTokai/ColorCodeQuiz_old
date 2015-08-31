@@ -317,7 +317,7 @@ public class ColortoCodeActivity extends AppCompatActivity {
                  answer4.setText("#" + r16 + g16 + b16);
                  break;
          }
-                           question.setBackgroundColor(Color.rgb(r, g, b));
+         question.setBackgroundColor(Color.rgb(r, g, b));
      }
 
     @Override
