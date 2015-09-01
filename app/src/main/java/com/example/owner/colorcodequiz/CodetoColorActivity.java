@@ -204,10 +204,11 @@ public class CodetoColorActivity extends AppCompatActivity {
         Random rnd4 = new Random();
         check_answer = rnd4.nextInt(3) + 1;
         String r16 = Integer.toHexString(r);
+        if ( r16.length() < 2) r16 = "0" + r16;
         String g16 = Integer.toHexString(g);
+        if ( g16.length() < 2) g16 = "0" + g16;
         String b16 = Integer.toHexString(b);
-
-        questioncode.setText("#" + r16 + g16 + b16);
+        if ( b16.length() < 2) b16 = "0" + b16;
 
 
         //createChoicesColorcode
@@ -266,11 +267,13 @@ public class CodetoColorActivity extends AppCompatActivity {
                 break;
             }
         }
+
         //cleanCheckselect
         check_select1.setImageDrawable(null);
         check_select2.setImageDrawable(null);
         check_select3.setImageDrawable(null);
         check_select4.setImageDrawable(null);
+
         // setanswer
         switch (check_answer) {
             case 1:

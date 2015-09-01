@@ -74,7 +74,7 @@ public class ColortoCodeActivity extends AppCompatActivity {
                 gameCount = gameCount + 1;
                 progress.setText("Progress:" + gameCount + "/"+ noq);
                 nextquestion = true;
-            }else{
+            }if(gameCount >= noq){
                 new AlertDialog.Builder(ColortoCodeActivity.this)
                         .setTitle("Menuに戻ります。")
                         .setMessage(noq+"問中"+noca+"問正解しました。")
@@ -101,12 +101,11 @@ public class ColortoCodeActivity extends AppCompatActivity {
             } else {
                 check_select2.setImageResource(R.drawable.batu);
             }
-            gameCount = gameCount + 1;
             if (gameCount <= noq) {
                 gameCount = gameCount + 1;
-                progress.setText("Progress:" + gameCount + "/"+ noq);
+                progress.setText("Progress:" + gameCount + "/" + noq);
                 nextquestion = true;
-            }else{
+            }  if (gameCount >= noq ){
                 new AlertDialog.Builder(ColortoCodeActivity.this)
                         .setTitle("Menuに戻ります。")
                         .setMessage(noq+"問中"+noca+"問正解しました。")
@@ -133,12 +132,11 @@ public class ColortoCodeActivity extends AppCompatActivity {
             } else {
                 check_select3.setImageResource(R.drawable.batu);
             }
-            gameCount = gameCount + 1;
             if (gameCount <= noq) {
                 gameCount = gameCount + 1;
                 progress.setText("Progress:" + gameCount + "/"+ noq);
                 nextquestion = true;
-            }else{
+            }if (gameCount >= noq){
                 new AlertDialog.Builder(ColortoCodeActivity.this)
                         .setTitle("Menuに戻ります。")
                         .setMessage(noq+"問中"+noca+"問正解しました。")
@@ -164,12 +162,11 @@ public class ColortoCodeActivity extends AppCompatActivity {
             } else {
                 check_select4.setImageResource(R.drawable.batu);
             }
-            gameCount = gameCount + 1;
             if (gameCount <= noq) {
                 gameCount = gameCount + 1;
                 progress.setText("Progress:" + gameCount + "/"+ noq);
                 nextquestion = true;
-            }else{
+            }if(gameCount >= noq){
                 new AlertDialog.Builder(ColortoCodeActivity.this)
                         .setTitle("Menuに戻ります。")
                         .setMessage(noq+"問中"+noca+"問正解しました。")
@@ -267,20 +264,32 @@ public class ColortoCodeActivity extends AppCompatActivity {
          Random rnd4 = new Random();
          check_answer = rnd4.nextInt(3) + 1;
          String r16 = Integer.toHexString(r);
+         if ( r16.length() < 2) r16 = "0" + r16;
          String g16 = Integer.toHexString(g);
+         if ( g16.length() < 2) g16 = "0" + g16;
          String b16 = Integer.toHexString(b);
+         if ( b16.length() < 2) b16 = "0" + b16;
 
          String r_a1_16 = Integer.toHexString(r_a1);
+         if ( r_a1_16.length() < 2) r_a1_16 = "0" + r_a1_16;
          String g_a1_16 = Integer.toHexString(g_a1);
+         if ( g_a1_16.length() < 2) g_a1_16 = "0" + g_a1_16;
          String b_a1_16 = Integer.toHexString(b_a1);
+         if ( b_a1_16.length() < 2) b_a1_16 = "0" + b_a1_16;
 
          String r_a2_16 = Integer.toHexString(r_a2);
+         if ( r_a2_16.length() < 2) r_a2_16 = "0" + r_a2_16;
          String g_a2_16 = Integer.toHexString(g_a2);
+         if ( g_a2_16.length() < 2) g_a2_16 = "0" + g_a2_16;
          String b_a2_16 = Integer.toHexString(b_a2);
+         if ( b_a2_16.length() < 2) b_a2_16 = "0" + b_a2_16;
 
          String r_a3_16 = Integer.toHexString(r_a3);
+         if ( r_a3_16.length() < 2) r_a3_16 = "0" + r_a3_16;
          String g_a3_16 = Integer.toHexString(g_a3);
+         if ( g_a3_16.length() < 2) g_a3_16 = "0" + g_a3_16;
          String b_a3_16 = Integer.toHexString(b_a3);
+         if ( b_a2_16.length() < 2) b_a2_16 = "0" + b_a2_16;
 
          switch (check_answer) {
              case 1:
