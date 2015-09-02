@@ -126,10 +126,12 @@ public class ColortoCode_practiceActivity extends AppCompatActivity {
     }
 
     public void setanswer() {
+        //cleanCheck_select
         check_select1.setImageDrawable(null);
         check_select2.setImageDrawable(null);
         check_select3.setImageDrawable(null);
         check_select4.setImageDrawable(null);
+
         if (gameCount == 1) {
             //setQuestionImage
             Bitmap bitmap = Bitmap.createBitmap(500, 500, Bitmap.Config.ARGB_8888);
@@ -204,7 +206,7 @@ public class ColortoCode_practiceActivity extends AppCompatActivity {
 
             Canvas canvas;
             canvas = new Canvas(bitmap);
-            canvas.drawColor(Color.parseColor("#00ffff"));
+            canvas.drawColor(Color.parseColor("#ffff00"));
 
             question.setImageBitmap(bitmap);
             //setChoices

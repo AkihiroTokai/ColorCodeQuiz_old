@@ -190,7 +190,7 @@ public class CodetoColorActivity extends AppCompatActivity {
     }
 
     public void setanswer() {
-        //createColorCode
+        //createQuesionCode
         Random rnd1 = new Random();
         int r = rnd1.nextInt(256);
         Random rnd2 = new Random();
@@ -209,10 +209,12 @@ public class CodetoColorActivity extends AppCompatActivity {
         if ( g16.length() < 2) g16 = "0" + g16;
         String b16 = Integer.toHexString(b);
         if ( b16.length() < 2) b16 = "0" + b16;
+        questioncode.setText("#"+r16+g16+b16);
 
 
         //createChoicesColorcode
         int minlimit = 20;
+
         while (true) {
 
             Random rnd5 = new Random();
