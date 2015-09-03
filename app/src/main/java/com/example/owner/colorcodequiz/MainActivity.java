@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void select1(View view) {
-        if (nextquestion == false) {
+        if (!nextquestion) {
             if (check_answer == 1) {
                 check_select1.setImageResource(R.drawable.maru);
                 noca = noca+1;
@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void select2(View view) {
-        if (nextquestion == false) {
+        if (!nextquestion) {
             if (check_answer == 2) {
                 check_select2.setImageResource(R.drawable.maru);
                 noca = noca +1;
@@ -103,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void select3(View view) {
-        if (nextquestion == false){
+        if (!nextquestion){
             if (check_answer == 3) {
                 check_select3.setImageResource(R.drawable.maru);
                 noca = noca +1;
@@ -118,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void select4(View view) {
-        if (nextquestion == false)   {
+        if (!nextquestion)   {
             if (check_answer == 1) {
                 check_select4.setImageResource(R.drawable.maru);
                 noca = noca +1;
@@ -232,7 +232,7 @@ public class MainActivity extends AppCompatActivity {
             green.setText("00");
             blue.setText("ff");
             answer1.setBackgroundColor(Color.parseColor("#008888"));
-            answer2.setBackgroundColor(Color.parseColor("#000088"));
+            answer2.setBackgroundColor(Color.parseColor("#0000ff"));
             answer3.setBackgroundColor(Color.parseColor("#88ff00"));
             answer4.setBackgroundColor(Color.parseColor("#ff00ff"));
             check_answer = 2;

@@ -287,27 +287,19 @@ public class ColortoCode_practiceActivity extends AppCompatActivity {
         }
 
         else if (gameCount == 10) {
-            red.setText("00");
-            green.setText("88");
-            blue.setText("88");
-            answer1.setBackgroundColor(Color.parseColor("#8800ff"));
-            answer2.setBackgroundColor(Color.parseColor("#ff88ff"));
-            answer3.setBackgroundColor(Color.parseColor("#88ff00"));
-            answer4.setBackgroundColor(Color.parseColor("#008888"));
-
             //setQuestionImage
             Bitmap bitmap = Bitmap.createBitmap(500, 500, Bitmap.Config.ARGB_8888);
 
             Canvas canvas;
             canvas = new Canvas(bitmap);
-            canvas.drawColor(Color.parseColor("#880088"));
+            canvas.drawColor(Color.parseColor("#008888"));
 
             question.setImageBitmap(bitmap);
             //setChoices
             answer1.setText("#008800");
             answer2.setText("#008888");
             answer3.setText("#000088");
-            answer4.setText("#880088");
+            answer4.setText("#880000");
 
             check_answer = 2;
         }
