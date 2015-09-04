@@ -198,7 +198,7 @@ public class ColortoCodeActivity extends AppCompatActivity {
          int r_a1,r_a2,r_a3,g_a1,g_a2,g_a3,b_a1,b_a2,b_a3;
 
          //createChoicesColorcode
-         int limit = 20;
+         int minlimit = 20;
          while (true) {
 
              Random rnd5 = new Random();
@@ -212,7 +212,7 @@ public class ColortoCodeActivity extends AppCompatActivity {
              int abs_r2_3 = Math.abs(r_a2 - r_a3);
              int abs_r3_1 = Math.abs(r_a3 - r_a1);
 
-             if ((abs_r1_2 >= limit) && (abs_r2_3 >= limit) && (abs_r3_1 >= limit)) {
+             if ((abs_r1_2 >= minlimit) && (abs_r2_3 >= minlimit) && (abs_r3_1 >= minlimit)) {
                  break;
              }
          }
@@ -230,7 +230,7 @@ public class ColortoCodeActivity extends AppCompatActivity {
              int abs_g2_3 = Math.abs(g_a2 - g_a3);
              int abs_g3_1 = Math.abs(g_a3 - g_a1);
 
-             if ((abs_g1_2 >= limit) && (abs_g2_3 >= limit) && (abs_g3_1 >= limit)) {
+             if ((abs_g1_2 >= minlimit) && (abs_g2_3 >= minlimit) && (abs_g3_1 >= minlimit)) {
                  break;
              }
 
@@ -249,7 +249,7 @@ public class ColortoCodeActivity extends AppCompatActivity {
              int abs_b2_3 = Math.abs(b_a2 - b_a3);
              int abs_b3_1 = Math.abs(b_a3 - b_a1);
 
-             if ((abs_b1_2 >= limit) && (abs_b2_3 >= limit) && (abs_b3_1 >= limit)) {
+             if ((abs_b1_2 >= minlimit) && (abs_b2_3 >=minlimit) && (abs_b3_1 >= minlimit)) {
                  break;
              }
          }
